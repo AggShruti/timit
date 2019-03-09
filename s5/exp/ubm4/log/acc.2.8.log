@@ -1,0 +1,44 @@
+# gmm-gselect --n=25 "--gselect=ark,s,cs:gunzip -c exp/ubm4/gselect.8.gz|" "fgmm-global-to-gmm exp/ubm4/2.ubm - |" "ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split30/8/utt2spk scp:data/train/split30/8/cmvn.scp scp:data/train/split30/8/feats.scp ark:- | splice-feats --left-context=3 --right-context=3 ark:- ark:- | transform-feats exp/tri3_ali/final.mat ark:- ark:- | transform-feats --utt2spk=ark:data/train/split30/8/utt2spk ark,s,cs:exp/tri3_ali/trans.8 ark:- ark:- |" ark:- | fgmm-global-acc-stats --gselect=ark,s,cs:- exp/ubm4/2.ubm "ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split30/8/utt2spk scp:data/train/split30/8/cmvn.scp scp:data/train/split30/8/feats.scp ark:- | splice-feats --left-context=3 --right-context=3 ark:- ark:- | transform-feats exp/tri3_ali/final.mat ark:- ark:- | transform-feats --utt2spk=ark:data/train/split30/8/utt2spk ark,s,cs:exp/tri3_ali/trans.8 ark:- ark:- |" exp/ubm4/2.8.acc 
+# Started at Wed Feb 27 14:41:17 +07 2019
+#
+fgmm-global-acc-stats --gselect=ark,s,cs:- exp/ubm4/2.ubm 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split30/8/utt2spk scp:data/train/split30/8/cmvn.scp scp:data/train/split30/8/feats.scp ark:- | splice-feats --left-context=3 --right-context=3 ark:- ark:- | transform-feats exp/tri3_ali/final.mat ark:- ark:- | transform-feats --utt2spk=ark:data/train/split30/8/utt2spk ark,s,cs:exp/tri3_ali/trans.8 ark:- ark:- |' exp/ubm4/2.8.acc 
+gmm-gselect --n=25 '--gselect=ark,s,cs:gunzip -c exp/ubm4/gselect.8.gz|' 'fgmm-global-to-gmm exp/ubm4/2.ubm - |' 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split30/8/utt2spk scp:data/train/split30/8/cmvn.scp scp:data/train/split30/8/feats.scp ark:- | splice-feats --left-context=3 --right-context=3 ark:- ark:- | transform-feats exp/tri3_ali/final.mat ark:- ark:- | transform-feats --utt2spk=ark:data/train/split30/8/utt2spk ark,s,cs:exp/tri3_ali/trans.8 ark:- ark:- |' ark:- 
+fgmm-global-to-gmm exp/ubm4/2.ubm - 
+splice-feats --left-context=3 --right-context=3 ark:- ark:- 
+transform-feats --utt2spk=ark:data/train/split30/8/utt2spk ark,s,cs:exp/tri3_ali/trans.8 ark:- ark:- 
+apply-cmvn --utt2spk=ark:data/train/split30/8/utt2spk scp:data/train/split30/8/cmvn.scp scp:data/train/split30/8/feats.scp ark:- 
+transform-feats exp/tri3_ali/final.mat ark:- ark:- 
+LOG (fgmm-global-to-gmm[5.5.208~1-b0fc0]:main():fgmm-global-to-gmm.cc:58) Written diagonal GMM to -
+transform-feats exp/tri3_ali/final.mat ark:- ark:- 
+apply-cmvn --utt2spk=ark:data/train/split30/8/utt2spk scp:data/train/split30/8/cmvn.scp scp:data/train/split30/8/feats.scp ark:- 
+transform-feats --utt2spk=ark:data/train/split30/8/utt2spk ark,s,cs:exp/tri3_ali/trans.8 ark:- ark:- 
+splice-feats --left-context=3 --right-context=3 ark:- ark:- 
+LOG (gmm-gselect[5.5.208~1-b0fc0]:main():gmm-gselect.cc:114) For 0'th file, average UBM likelihood over 462 frames is -56.3439
+LOG (gmm-gselect[5.5.208~1-b0fc0]:main():gmm-gselect.cc:114) For 10'th file, average UBM likelihood over 216 frames is -54.196
+LOG (gmm-gselect[5.5.208~1-b0fc0]:main():gmm-gselect.cc:114) For 20'th file, average UBM likelihood over 335 frames is -49.596
+LOG (gmm-gselect[5.5.208~1-b0fc0]:main():gmm-gselect.cc:114) For 30'th file, average UBM likelihood over 238 frames is -55.5743
+LOG (gmm-gselect[5.5.208~1-b0fc0]:main():gmm-gselect.cc:114) For 40'th file, average UBM likelihood over 285 frames is -53.3291
+LOG (gmm-gselect[5.5.208~1-b0fc0]:main():gmm-gselect.cc:114) For 50'th file, average UBM likelihood over 530 frames is -52.3519
+LOG (gmm-gselect[5.5.208~1-b0fc0]:main():gmm-gselect.cc:114) For 60'th file, average UBM likelihood over 298 frames is -51.693
+LOG (gmm-gselect[5.5.208~1-b0fc0]:main():gmm-gselect.cc:114) For 70'th file, average UBM likelihood over 405 frames is -57.1441
+LOG (gmm-gselect[5.5.208~1-b0fc0]:main():gmm-gselect.cc:114) For 80'th file, average UBM likelihood over 262 frames is -53.8339
+LOG (gmm-gselect[5.5.208~1-b0fc0]:main():gmm-gselect.cc:114) For 90'th file, average UBM likelihood over 265 frames is -55.7194
+LOG (gmm-gselect[5.5.208~1-b0fc0]:main():gmm-gselect.cc:114) For 100'th file, average UBM likelihood over 240 frames is -51.9752
+LOG (gmm-gselect[5.5.208~1-b0fc0]:main():gmm-gselect.cc:114) For 110'th file, average UBM likelihood over 341 frames is -54.3416
+LOG (apply-cmvn[5.5.208~1-b0fc0]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 128 utterances, errors on 0
+LOG (gmm-gselect[5.5.208~1-b0fc0]:main():gmm-gselect.cc:114) For 120'th file, average UBM likelihood over 269 frames is -51.8236
+LOG (apply-cmvn[5.5.208~1-b0fc0]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 128 utterances, errors on 0
+LOG (transform-feats[5.5.208~1-b0fc0]:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -88.6037 over 39697 frames.
+LOG (transform-feats[5.5.208~1-b0fc0]:main():transform-feats.cc:161) Applied transform to 128 utterances; 0 had errors.
+LOG (transform-feats[5.5.208~1-b0fc0]:main():transform-feats.cc:158) Overall average logdet is 1.39241 over 39697 frames.
+LOG (transform-feats[5.5.208~1-b0fc0]:main():transform-feats.cc:161) Applied transform to 128 utterances; 0 had errors.
+LOG (transform-feats[5.5.208~1-b0fc0]:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -88.6037 over 39697 frames.
+LOG (transform-feats[5.5.208~1-b0fc0]:main():transform-feats.cc:161) Applied transform to 128 utterances; 0 had errors.
+LOG (transform-feats[5.5.208~1-b0fc0]:main():transform-feats.cc:158) Overall average logdet is 1.39241 over 39697 frames.
+LOG (transform-feats[5.5.208~1-b0fc0]:main():transform-feats.cc:161) Applied transform to 128 utterances; 0 had errors.
+LOG (gmm-gselect[5.5.208~1-b0fc0]:main():gmm-gselect.cc:125) Done 128 files, 0 with errors, average UBM log-likelihood is -53.7045 over 39697 frames.
+LOG (fgmm-global-acc-stats[5.5.208~1-b0fc0]:main():fgmm-global-acc-stats.cc:148) Done 128 files; 0 with errors.
+LOG (fgmm-global-acc-stats[5.5.208~1-b0fc0]:main():fgmm-global-acc-stats.cc:150) Overall likelihood per frame = -50.3475 over 39697 (weighted) frames.
+LOG (fgmm-global-acc-stats[5.5.208~1-b0fc0]:main():fgmm-global-acc-stats.cc:155) Written accs to exp/ubm4/2.8.acc
+# Accounting: time=4 threads=1
+# Ended (code 0) at Wed Feb 27 14:41:22 +07 2019, elapsed time 4 seconds

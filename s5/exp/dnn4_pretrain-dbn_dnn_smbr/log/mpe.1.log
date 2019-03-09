@@ -1,0 +1,22 @@
+# nnet-train-mpe-sequential --feature-transform=exp/dnn4_pretrain-dbn_dnn/final.feature_transform --class-frame-counts=exp/dnn4_pretrain-dbn_dnn/ali_train_pdf.counts --acoustic-scale=0.2 --lm-scale=1.0 --learn-rate=0.00001 --momentum=0.0 --do-smbr=true --verbose=0 --one-silence-class=true --silence-phones=1 exp/dnn4_pretrain-dbn_dnn_smbr/0.nnet exp/dnn4_pretrain-dbn_dnn_ali/final.mdl "ark,o:copy-feats scp:exp/dnn4_pretrain-dbn_dnn_smbr/train.scp ark:- |" scp:exp/dnn4_pretrain-dbn_dnn_denlats/lat.scp "ark:gunzip -c exp/dnn4_pretrain-dbn_dnn_ali/ali.*.gz |" exp/dnn4_pretrain-dbn_dnn_smbr/1.nnet 
+# Started at Wed Feb 27 20:00:28 +07 2019
+#
+nnet-train-mpe-sequential --feature-transform=exp/dnn4_pretrain-dbn_dnn/final.feature_transform --class-frame-counts=exp/dnn4_pretrain-dbn_dnn/ali_train_pdf.counts --acoustic-scale=0.2 --lm-scale=1.0 --learn-rate=0.00001 --momentum=0.0 --do-smbr=true --verbose=0 --one-silence-class=true --silence-phones=1 exp/dnn4_pretrain-dbn_dnn_smbr/0.nnet exp/dnn4_pretrain-dbn_dnn_ali/final.mdl 'ark,o:copy-feats scp:exp/dnn4_pretrain-dbn_dnn_smbr/train.scp ark:- |' scp:exp/dnn4_pretrain-dbn_dnn_denlats/lat.scp 'ark:gunzip -c exp/dnn4_pretrain-dbn_dnn_ali/ali.*.gz |' exp/dnn4_pretrain-dbn_dnn_smbr/1.nnet 
+WARNING (nnet-train-mpe-sequential[5.5.208~1-b0fc0]:SelectGpuId():cu-device.cc:203) Not in compute-exclusive mode.  Suggestion: use 'nvidia-smi -c 3' to set compute exclusive mode
+LOG (nnet-train-mpe-sequential[5.5.208~1-b0fc0]:SelectGpuIdAuto():cu-device.cc:323) Selecting from 1 GPUs
+LOG (nnet-train-mpe-sequential[5.5.208~1-b0fc0]:SelectGpuIdAuto():cu-device.cc:338) cudaSetDevice(0): Tesla K80	free:11354M, used:87M, total:11441M, free/total:0.992379
+LOG (nnet-train-mpe-sequential[5.5.208~1-b0fc0]:SelectGpuIdAuto():cu-device.cc:385) Trying to select device: 0 (automatically), mem_ratio: 0.992379
+LOG (nnet-train-mpe-sequential[5.5.208~1-b0fc0]:SelectGpuIdAuto():cu-device.cc:404) Success selecting device 0 free mem ratio: 0.992379
+LOG (nnet-train-mpe-sequential[5.5.208~1-b0fc0]:FinalizeActiveGpu():cu-device.cc:258) The active GPU is [0]: Tesla K80	free:11306M, used:135M, total:11441M, free/total:0.988184 version 3.7
+LOG (nnet-train-mpe-sequential[5.5.208~1-b0fc0]:main():nnet-train-mpe-sequential.cc:192) Removing softmax from the nnet exp/dnn4_pretrain-dbn_dnn_smbr/0.nnet
+LOG (nnet-train-mpe-sequential[5.5.208~1-b0fc0]:PdfPrior():nnet-pdf-prior.cc:34) Computing pdf-priors from : exp/dnn4_pretrain-dbn_dnn/ali_train_pdf.counts
+LOG (nnet-train-mpe-sequential[5.5.208~1-b0fc0]:PdfPrior():nnet-pdf-prior.cc:64) Floored 0 pdf-priors (hard-set to 1.84467e+19, which disables DNN output when decoding)
+copy-feats scp:exp/dnn4_pretrain-dbn_dnn_smbr/train.scp ark:- 
+LOG (nnet-train-mpe-sequential[5.5.208~1-b0fc0]:main():nnet-train-mpe-sequential.cc:217) TRAINING STARTED
+LOG (copy-feats[5.5.208~1-b0fc0]:main():copy-feats.cc:143) Copied 3696 feature matrices.
+LOG (nnet-train-mpe-sequential[5.5.208~1-b0fc0]:main():nnet-train-mpe-sequential.cc:384) Appending the softmax exp/dnn4_pretrain-dbn_dnn_smbr/1.nnet
+LOG (nnet-train-mpe-sequential[5.5.208~1-b0fc0]:main():nnet-train-mpe-sequential.cc:390) TRAINING FINISHED; Time taken = 1.63696 min; processed 11452.4 frames per second.
+LOG (nnet-train-mpe-sequential[5.5.208~1-b0fc0]:main():nnet-train-mpe-sequential.cc:394) Done 3696 files, 0 with no reference alignments, 0 with no lattices, 0 with other errors.
+LOG (nnet-train-mpe-sequential[5.5.208~1-b0fc0]:main():nnet-train-mpe-sequential.cc:399) Overall average frame-accuracy is 0.854461 over 1124823 frames.
+# Accounting: time=100 threads=1
+# Ended (code 0) at Wed Feb 27 20:02:08 +07 2019, elapsed time 100 seconds

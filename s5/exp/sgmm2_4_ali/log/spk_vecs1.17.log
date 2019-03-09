@@ -1,0 +1,75 @@
+# ali-to-post "ark:gunzip -c exp/sgmm2_4_ali/pre_ali.17.gz|" ark:- | weight-silence-post 0.0 1 exp/sgmm2_4/final.alimdl ark:- ark:- | sgmm2-post-to-gpost "--gselect=ark,s,cs:gunzip -c exp/sgmm2_4/gselect.17.gz|" exp/sgmm2_4/final.alimdl "ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split30/17/utt2spk scp:data/train/split30/17/cmvn.scp scp:data/train/split30/17/feats.scp ark:- | splice-feats --left-context=3 --right-context=3 ark:- ark:- | transform-feats exp/sgmm2_4/final.mat ark:- ark:- | transform-feats --utt2spk=ark:data/train/split30/17/utt2spk ark,s,cs:exp/tri3_ali/trans.17 ark:- ark:- |" ark:- ark:- | sgmm2-est-spkvecs-gpost --spk2utt=ark:data/train/split30/17/spk2utt exp/sgmm2_4/final.mdl "ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split30/17/utt2spk scp:data/train/split30/17/cmvn.scp scp:data/train/split30/17/feats.scp ark:- | splice-feats --left-context=3 --right-context=3 ark:- ark:- | transform-feats exp/sgmm2_4/final.mat ark:- ark:- | transform-feats --utt2spk=ark:data/train/split30/17/utt2spk ark,s,cs:exp/tri3_ali/trans.17 ark:- ark:- |" ark,s,cs:- ark:exp/sgmm2_4_ali/pre_vecs.17 
+# Started at Wed Feb 27 15:21:30 +07 2019
+#
+sgmm2-post-to-gpost '--gselect=ark,s,cs:gunzip -c exp/sgmm2_4/gselect.17.gz|' exp/sgmm2_4/final.alimdl 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split30/17/utt2spk scp:data/train/split30/17/cmvn.scp scp:data/train/split30/17/feats.scp ark:- | splice-feats --left-context=3 --right-context=3 ark:- ark:- | transform-feats exp/sgmm2_4/final.mat ark:- ark:- | transform-feats --utt2spk=ark:data/train/split30/17/utt2spk ark,s,cs:exp/tri3_ali/trans.17 ark:- ark:- |' ark:- ark:- 
+weight-silence-post 0.0 1 exp/sgmm2_4/final.alimdl ark:- ark:- 
+sgmm2-est-spkvecs-gpost --spk2utt=ark:data/train/split30/17/spk2utt exp/sgmm2_4/final.mdl 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split30/17/utt2spk scp:data/train/split30/17/cmvn.scp scp:data/train/split30/17/feats.scp ark:- | splice-feats --left-context=3 --right-context=3 ark:- ark:- | transform-feats exp/sgmm2_4/final.mat ark:- ark:- | transform-feats --utt2spk=ark:data/train/split30/17/utt2spk ark,s,cs:exp/tri3_ali/trans.17 ark:- ark:- |' ark,s,cs:- ark:exp/sgmm2_4_ali/pre_vecs.17 
+ali-to-post 'ark:gunzip -c exp/sgmm2_4_ali/pre_ali.17.gz|' ark:- 
+apply-cmvn --utt2spk=ark:data/train/split30/17/utt2spk scp:data/train/split30/17/cmvn.scp scp:data/train/split30/17/feats.scp ark:- 
+transform-feats --utt2spk=ark:data/train/split30/17/utt2spk ark,s,cs:exp/tri3_ali/trans.17 ark:- ark:- 
+transform-feats exp/sgmm2_4/final.mat ark:- ark:- 
+splice-feats --left-context=3 --right-context=3 ark:- ark:- 
+splice-feats --left-context=3 --right-context=3 ark:- ark:- 
+transform-feats exp/sgmm2_4/final.mat ark:- ark:- 
+apply-cmvn --utt2spk=ark:data/train/split30/17/utt2spk scp:data/train/split30/17/cmvn.scp scp:data/train/split30/17/feats.scp ark:- 
+transform-feats --utt2spk=ark:data/train/split30/17/utt2spk ark,s,cs:exp/tri3_ali/trans.17 ark:- ark:- 
+LOG (sgmm2-est-spkvecs-gpost[5.5.208~1-b0fc0]:UpdateWithU():estimate-am-sgmm2.cc:1937) *Objf impr for speaker vector is 1.51579 per frame, over 1874 frames.
+LOG (sgmm2-est-spkvecs-gpost[5.5.208~1-b0fc0]:main():sgmm2-est-spkvecs-gpost.cc:158) For speaker MILB0, auxf-impr from speaker vector is 1.51579, over 1874 frames.
+LOG (sgmm2-post-to-gpost[5.5.208~1-b0fc0]:main():sgmm2-post-to-gpost.cc:168) Avg like per frame so far is -38.8714
+LOG (sgmm2-est-spkvecs-gpost[5.5.208~1-b0fc0]:UpdateWithU():estimate-am-sgmm2.cc:1937) *Objf impr for speaker vector is 1.60078 per frame, over 2159 frames.
+LOG (sgmm2-est-spkvecs-gpost[5.5.208~1-b0fc0]:main():sgmm2-est-spkvecs-gpost.cc:158) For speaker MJAC0, auxf-impr from speaker vector is 1.60078, over 2159 frames.
+LOG (sgmm2-post-to-gpost[5.5.208~1-b0fc0]:main():sgmm2-post-to-gpost.cc:168) Avg like per frame so far is -38.5789
+LOG (sgmm2-est-spkvecs-gpost[5.5.208~1-b0fc0]:UpdateWithU():estimate-am-sgmm2.cc:1937) *Objf impr for speaker vector is 1.38073 per frame, over 2347 frames.
+LOG (sgmm2-est-spkvecs-gpost[5.5.208~1-b0fc0]:main():sgmm2-est-spkvecs-gpost.cc:158) For speaker MJAE0, auxf-impr from speaker vector is 1.38073, over 2347 frames.
+LOG (sgmm2-post-to-gpost[5.5.208~1-b0fc0]:main():sgmm2-post-to-gpost.cc:168) Avg like per frame so far is -38.0581
+LOG (sgmm2-est-spkvecs-gpost[5.5.208~1-b0fc0]:UpdateWithU():estimate-am-sgmm2.cc:1937) *Objf impr for speaker vector is 1.21704 per frame, over 2117 frames.
+LOG (sgmm2-est-spkvecs-gpost[5.5.208~1-b0fc0]:main():sgmm2-est-spkvecs-gpost.cc:158) For speaker MJAI0, auxf-impr from speaker vector is 1.21704, over 2117 frames.
+LOG (sgmm2-post-to-gpost[5.5.208~1-b0fc0]:main():sgmm2-post-to-gpost.cc:168) Avg like per frame so far is -38.2803
+LOG (sgmm2-est-spkvecs-gpost[5.5.208~1-b0fc0]:UpdateWithU():estimate-am-sgmm2.cc:1937) *Objf impr for speaker vector is 0.847851 per frame, over 2256 frames.
+LOG (sgmm2-est-spkvecs-gpost[5.5.208~1-b0fc0]:main():sgmm2-est-spkvecs-gpost.cc:158) For speaker MJBG0, auxf-impr from speaker vector is 0.847851, over 2256 frames.
+LOG (sgmm2-est-spkvecs-gpost[5.5.208~1-b0fc0]:UpdateWithU():estimate-am-sgmm2.cc:1937) *Objf impr for speaker vector is 1.76535 per frame, over 1673 frames.
+LOG (sgmm2-est-spkvecs-gpost[5.5.208~1-b0fc0]:main():sgmm2-est-spkvecs-gpost.cc:158) For speaker MJDA0, auxf-impr from speaker vector is 1.76535, over 1673 frames.
+LOG (sgmm2-post-to-gpost[5.5.208~1-b0fc0]:main():sgmm2-post-to-gpost.cc:168) Avg like per frame so far is -37.7022
+LOG (sgmm2-est-spkvecs-gpost[5.5.208~1-b0fc0]:UpdateWithU():estimate-am-sgmm2.cc:1937) *Objf impr for speaker vector is 1.53859 per frame, over 1879 frames.
+LOG (sgmm2-est-spkvecs-gpost[5.5.208~1-b0fc0]:main():sgmm2-est-spkvecs-gpost.cc:158) For speaker MJDC0, auxf-impr from speaker vector is 1.53859, over 1879 frames.
+LOG (sgmm2-post-to-gpost[5.5.208~1-b0fc0]:main():sgmm2-post-to-gpost.cc:168) Avg like per frame so far is -37.9361
+LOG (sgmm2-est-spkvecs-gpost[5.5.208~1-b0fc0]:UpdateWithU():estimate-am-sgmm2.cc:1937) *Objf impr for speaker vector is 1.97382 per frame, over 3023 frames.
+LOG (sgmm2-est-spkvecs-gpost[5.5.208~1-b0fc0]:main():sgmm2-est-spkvecs-gpost.cc:158) For speaker MJDE0, auxf-impr from speaker vector is 1.97382, over 3023 frames.
+LOG (sgmm2-post-to-gpost[5.5.208~1-b0fc0]:main():sgmm2-post-to-gpost.cc:168) Avg like per frame so far is -38.3561
+LOG (sgmm2-est-spkvecs-gpost[5.5.208~1-b0fc0]:UpdateWithU():estimate-am-sgmm2.cc:1937) *Objf impr for speaker vector is 1.32512 per frame, over 2166 frames.
+LOG (sgmm2-est-spkvecs-gpost[5.5.208~1-b0fc0]:main():sgmm2-est-spkvecs-gpost.cc:158) For speaker MJDG0, auxf-impr from speaker vector is 1.32512, over 2166 frames.
+LOG (sgmm2-post-to-gpost[5.5.208~1-b0fc0]:main():sgmm2-post-to-gpost.cc:168) Avg like per frame so far is -38.5383
+LOG (sgmm2-est-spkvecs-gpost[5.5.208~1-b0fc0]:UpdateWithU():estimate-am-sgmm2.cc:1937) *Objf impr for speaker vector is 1.34368 per frame, over 2434 frames.
+LOG (sgmm2-est-spkvecs-gpost[5.5.208~1-b0fc0]:main():sgmm2-est-spkvecs-gpost.cc:158) For speaker MJDM0, auxf-impr from speaker vector is 1.34368, over 2434 frames.
+LOG (sgmm2-est-spkvecs-gpost[5.5.208~1-b0fc0]:UpdateWithU():estimate-am-sgmm2.cc:1937) *Objf impr for speaker vector is 1.48708 per frame, over 2151 frames.
+LOG (sgmm2-est-spkvecs-gpost[5.5.208~1-b0fc0]:main():sgmm2-est-spkvecs-gpost.cc:158) For speaker MJEB0, auxf-impr from speaker vector is 1.48708, over 2151 frames.
+LOG (sgmm2-post-to-gpost[5.5.208~1-b0fc0]:main():sgmm2-post-to-gpost.cc:168) Avg like per frame so far is -38.592
+LOG (ali-to-post[5.5.208~1-b0fc0]:main():ali-to-post.cc:73) Converted 120 alignments.
+LOG (sgmm2-est-spkvecs-gpost[5.5.208~1-b0fc0]:UpdateWithU():estimate-am-sgmm2.cc:1937) *Objf impr for speaker vector is 1.29785 per frame, over 2256 frames.
+LOG (sgmm2-est-spkvecs-gpost[5.5.208~1-b0fc0]:main():sgmm2-est-spkvecs-gpost.cc:158) For speaker MJEB1, auxf-impr from speaker vector is 1.29785, over 2256 frames.
+LOG (sgmm2-post-to-gpost[5.5.208~1-b0fc0]:main():sgmm2-post-to-gpost.cc:168) Avg like per frame so far is -38.4945
+LOG (sgmm2-est-spkvecs-gpost[5.5.208~1-b0fc0]:UpdateWithU():estimate-am-sgmm2.cc:1937) *Objf impr for speaker vector is 1.29982 per frame, over 2216 frames.
+LOG (sgmm2-est-spkvecs-gpost[5.5.208~1-b0fc0]:main():sgmm2-est-spkvecs-gpost.cc:158) For speaker MJEE0, auxf-impr from speaker vector is 1.29982, over 2216 frames.
+LOG (weight-silence-post[5.5.208~1-b0fc0]:main():weight-silence-post.cc:95) Done 120 posteriors.
+LOG (sgmm2-post-to-gpost[5.5.208~1-b0fc0]:main():sgmm2-post-to-gpost.cc:168) Avg like per frame so far is -38.6279
+LOG (apply-cmvn[5.5.208~1-b0fc0]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 120 utterances, errors on 0
+LOG (apply-cmvn[5.5.208~1-b0fc0]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 120 utterances, errors on 0
+LOG (sgmm2-est-spkvecs-gpost[5.5.208~1-b0fc0]:UpdateWithU():estimate-am-sgmm2.cc:1937) *Objf impr for speaker vector is 1.23127 per frame, over 1781 frames.
+LOG (sgmm2-est-spkvecs-gpost[5.5.208~1-b0fc0]:main():sgmm2-est-spkvecs-gpost.cc:158) For speaker MJFH0, auxf-impr from speaker vector is 1.23127, over 1781 frames.
+LOG (transform-feats[5.5.208~1-b0fc0]:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -88.6037 over 36391 frames.
+LOG (transform-feats[5.5.208~1-b0fc0]:main():transform-feats.cc:161) Applied transform to 120 utterances; 0 had errors.
+LOG (transform-feats[5.5.208~1-b0fc0]:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -88.6037 over 36391 frames.
+LOG (transform-feats[5.5.208~1-b0fc0]:main():transform-feats.cc:161) Applied transform to 120 utterances; 0 had errors.
+LOG (transform-feats[5.5.208~1-b0fc0]:main():transform-feats.cc:158) Overall average logdet is 3.05776 over 36391 frames.
+LOG (transform-feats[5.5.208~1-b0fc0]:main():transform-feats.cc:161) Applied transform to 120 utterances; 0 had errors.
+LOG (transform-feats[5.5.208~1-b0fc0]:main():transform-feats.cc:158) Overall average logdet is 3.05776 over 36391 frames.
+LOG (transform-feats[5.5.208~1-b0fc0]:main():transform-feats.cc:161) Applied transform to 120 utterances; 0 had errors.
+LOG (sgmm2-post-to-gpost[5.5.208~1-b0fc0]:main():sgmm2-post-to-gpost.cc:168) Avg like per frame so far is -38.7682
+LOG (sgmm2-post-to-gpost[5.5.208~1-b0fc0]:main():sgmm2-post-to-gpost.cc:173) Overall like per frame (Gaussian only) = -38.7682 over 36391 frames.
+LOG (sgmm2-post-to-gpost[5.5.208~1-b0fc0]:main():sgmm2-post-to-gpost.cc:176) Done 120 files, 0 with errors.
+LOG (sgmm2-est-spkvecs-gpost[5.5.208~1-b0fc0]:UpdateWithU():estimate-am-sgmm2.cc:1937) *Objf impr for speaker vector is 1.434 per frame, over 2485 frames.
+LOG (sgmm2-est-spkvecs-gpost[5.5.208~1-b0fc0]:main():sgmm2-est-spkvecs-gpost.cc:158) For speaker MJFR0, auxf-impr from speaker vector is 1.434, over 2485 frames.
+LOG (sgmm2-est-spkvecs-gpost[5.5.208~1-b0fc0]:main():sgmm2-est-spkvecs-gpost.cc:208) Done 120 files, 0 with errors.
+LOG (sgmm2-est-spkvecs-gpost[5.5.208~1-b0fc0]:main():sgmm2-est-spkvecs-gpost.cc:210) Overall auxf impr per frame is 1.42432 over 32817 frames.
+# Accounting: time=8 threads=1
+# Ended (code 0) at Wed Feb 27 15:21:38 +07 2019, elapsed time 8 seconds

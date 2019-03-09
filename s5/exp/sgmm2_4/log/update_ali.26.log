@@ -1,0 +1,145 @@
+# sgmm2-est --update-flags=vMwcS --remove-speaker-space=true --power=0.25 exp/sgmm2_4/26.alimdl "sgmm2-sum-accs - exp/sgmm2_4/26.*.aliacc|" exp/sgmm2_4/27.alimdl 
+# Started at Wed Feb 27 15:12:59 +07 2019
+#
+sgmm2-est --update-flags=vMwcS --remove-speaker-space=true --power=0.25 exp/sgmm2_4/26.alimdl 'sgmm2-sum-accs - exp/sgmm2_4/26.*.aliacc|' exp/sgmm2_4/27.alimdl 
+sgmm2-sum-accs - exp/sgmm2_4/26.1.aliacc exp/sgmm2_4/26.10.aliacc exp/sgmm2_4/26.11.aliacc exp/sgmm2_4/26.12.aliacc exp/sgmm2_4/26.13.aliacc exp/sgmm2_4/26.14.aliacc exp/sgmm2_4/26.15.aliacc exp/sgmm2_4/26.16.aliacc exp/sgmm2_4/26.17.aliacc exp/sgmm2_4/26.18.aliacc exp/sgmm2_4/26.19.aliacc exp/sgmm2_4/26.2.aliacc exp/sgmm2_4/26.20.aliacc exp/sgmm2_4/26.21.aliacc exp/sgmm2_4/26.22.aliacc exp/sgmm2_4/26.23.aliacc exp/sgmm2_4/26.24.aliacc exp/sgmm2_4/26.25.aliacc exp/sgmm2_4/26.26.aliacc exp/sgmm2_4/26.27.aliacc exp/sgmm2_4/26.28.aliacc exp/sgmm2_4/26.29.aliacc exp/sgmm2_4/26.3.aliacc exp/sgmm2_4/26.30.aliacc exp/sgmm2_4/26.4.aliacc exp/sgmm2_4/26.5.aliacc exp/sgmm2_4/26.6.aliacc exp/sgmm2_4/26.7.aliacc exp/sgmm2_4/26.8.aliacc exp/sgmm2_4/26.9.aliacc 
+LOG (sgmm2-sum-accs[5.5.208~1-b0fc0]:main():sgmm2-sum-accs.cc:87) Written stats to -
+LOG (sgmm2-est[5.5.208~1-b0fc0]:Check():estimate-am-sgmm2.cc:216) Sgmm2PdfModel: J1 = 1400, J2 = 5684, D = 40, S = 41, T = 0, I = 400
+LOG (sgmm2-est[5.5.208~1-b0fc0]:Check():estimate-am-sgmm2.cc:362) Subspace GMM model properties: Y: yes, nonzero. Z, R: no.  S: yes, nonzero. y: yes, nonzero. a: no.  gamma: yes.  gamma: yes, nonzero. gamma_c: yes, nonzero. t: no.  U: no.  
+LOG (sgmm2-est[5.5.208~1-b0fc0]:UpdatePhoneVectors():estimate-am-sgmm2.cc:788) Updating phone vectors
+LOG (sgmm2-est[5.5.208~1-b0fc0]:UpdatePhoneVectorsInternal():estimate-am-sgmm2.cc:934) Auxf impr for j = 0 m = 0 is 0.0014069 per frame over 2342.37 frames.
+LOG (sgmm2-est[5.5.208~1-b0fc0]:UpdatePhoneVectorsInternal():estimate-am-sgmm2.cc:934) Auxf impr for j = 0 m = 1 is 0.00123826 per frame over 2334.63 frames.
+LOG (sgmm2-est[5.5.208~1-b0fc0]:UpdatePhoneVectorsInternal():estimate-am-sgmm2.cc:934) Auxf impr for j = 0 m = 2 is 0.00512577 per frame over 1290.27 frames.
+LOG (sgmm2-est[5.5.208~1-b0fc0]:UpdatePhoneVectorsInternal():estimate-am-sgmm2.cc:934) Auxf impr for j = 1 m = 0 is 0.0297434 per frame over 82.6639 frames.
+LOG (sgmm2-est[5.5.208~1-b0fc0]:UpdatePhoneVectorsInternal():estimate-am-sgmm2.cc:934) Auxf impr for j = 1 m = 1 is 0.145335 per frame over 24.1033 frames.
+LOG (sgmm2-est[5.5.208~1-b0fc0]:UpdatePhoneVectorsInternal():estimate-am-sgmm2.cc:934) Auxf impr for j = 1 m = 2 is 0.0786297 per frame over 115.441 frames.
+LOG (sgmm2-est[5.5.208~1-b0fc0]:UpdatePhoneVectorsInternal():estimate-am-sgmm2.cc:934) Auxf impr for j = 2 m = 0 is 0.0666102 per frame over 77.4313 frames.
+LOG (sgmm2-est[5.5.208~1-b0fc0]:UpdatePhoneVectorsInternal():estimate-am-sgmm2.cc:934) Auxf impr for j = 2 m = 1 is 0.0343251 per frame over 135.101 frames.
+LOG (sgmm2-est[5.5.208~1-b0fc0]:UpdatePhoneVectorsInternal():estimate-am-sgmm2.cc:934) Auxf impr for j = 2 m = 2 is 0.0641846 per frame over 83.8137 frames.
+LOG (sgmm2-est[5.5.208~1-b0fc0]:SolveQuadraticProblem<double>():sp-matrix.cc:686) Solving quadratic problem for v: floored 1 eigenvalues. 
+LOG (sgmm2-est[5.5.208~1-b0fc0]:UpdatePhoneVectors():estimate-am-sgmm2.cc:800) **Overall auxf impr for v is 0.0318332 over 1.12478e+06 frames
+LOG (sgmm2-est[5.5.208~1-b0fc0]:SolveQuadraticMatrixProblem():sp-matrix.cc:786) Solving matrix problem for M: floored 13 eigenvalues. 
+LOG (sgmm2-est[5.5.208~1-b0fc0]:SolveQuadraticMatrixProblem():sp-matrix.cc:786) Solving matrix problem for M: floored 20 eigenvalues. 
+LOG (sgmm2-est[5.5.208~1-b0fc0]:SolveQuadraticMatrixProblem():sp-matrix.cc:786) Solving matrix problem for M: floored 2 eigenvalues. 
+LOG (sgmm2-est[5.5.208~1-b0fc0]:UpdateM():estimate-am-sgmm2.cc:1074) Overall objective function improvement for model projections M is 1.35209e-05 over 1.12478e+06 frames
+LOG (sgmm2-est[5.5.208~1-b0fc0]:UpdateW():estimate-am-sgmm2.cc:1325) Updating weight projections
+LOG (sgmm2-est[5.5.208~1-b0fc0]:UpdateW():estimate-am-sgmm2.cc:1379) Predicted objf impr for w, iter = 0, i = 0 is 0.000141222 per frame over 4028.62 frames.
+LOG (sgmm2-est[5.5.208~1-b0fc0]:UpdateW():estimate-am-sgmm2.cc:1379) Predicted objf impr for w, iter = 0, i = 1 is 0.000115211 per frame over 3235.4 frames.
+LOG (sgmm2-est[5.5.208~1-b0fc0]:UpdateW():estimate-am-sgmm2.cc:1379) Predicted objf impr for w, iter = 0, i = 2 is 7.17046e-05 per frame over 4445.73 frames.
+LOG (sgmm2-est[5.5.208~1-b0fc0]:UpdateW():estimate-am-sgmm2.cc:1379) Predicted objf impr for w, iter = 0, i = 3 is 7.36778e-05 per frame over 5478.04 frames.
+LOG (sgmm2-est[5.5.208~1-b0fc0]:UpdateW():estimate-am-sgmm2.cc:1379) Predicted objf impr for w, iter = 0, i = 4 is 9.86307e-05 per frame over 4063.6 frames.
+LOG (sgmm2-est[5.5.208~1-b0fc0]:UpdateW():estimate-am-sgmm2.cc:1379) Predicted objf impr for w, iter = 0, i = 5 is 0.000146501 per frame over 2823.78 frames.
+LOG (sgmm2-est[5.5.208~1-b0fc0]:UpdateW():estimate-am-sgmm2.cc:1379) Predicted objf impr for w, iter = 0, i = 6 is 7.97075e-05 per frame over 4094.36 frames.
+LOG (sgmm2-est[5.5.208~1-b0fc0]:UpdateW():estimate-am-sgmm2.cc:1379) Predicted objf impr for w, iter = 0, i = 7 is 5.22576e-05 per frame over 6323.09 frames.
+LOG (sgmm2-est[5.5.208~1-b0fc0]:UpdateW():estimate-am-sgmm2.cc:1379) Predicted objf impr for w, iter = 0, i = 8 is 0.000108284 per frame over 2816.21 frames.
+LOG (sgmm2-est[5.5.208~1-b0fc0]:UpdateW():estimate-am-sgmm2.cc:1379) Predicted objf impr for w, iter = 0, i = 9 is 8.63528e-05 per frame over 4369.68 frames.
+LOG (sgmm2-est[5.5.208~1-b0fc0]:UpdateW():estimate-am-sgmm2.cc:1379) Predicted objf impr for w, iter = 1, i = 0 is 2.40887e-05 per frame over 4028.62 frames.
+LOG (sgmm2-est[5.5.208~1-b0fc0]:UpdateW():estimate-am-sgmm2.cc:1379) Predicted objf impr for w, iter = 1, i = 1 is 2.14945e-05 per frame over 3235.4 frames.
+LOG (sgmm2-est[5.5.208~1-b0fc0]:UpdateW():estimate-am-sgmm2.cc:1379) Predicted objf impr for w, iter = 1, i = 2 is 2.1443e-05 per frame over 4445.73 frames.
+LOG (sgmm2-est[5.5.208~1-b0fc0]:UpdateW():estimate-am-sgmm2.cc:1379) Predicted objf impr for w, iter = 1, i = 3 is 2.14356e-05 per frame over 5478.04 frames.
+LOG (sgmm2-est[5.5.208~1-b0fc0]:UpdateW():estimate-am-sgmm2.cc:1379) Predicted objf impr for w, iter = 1, i = 4 is 2.10296e-05 per frame over 4063.6 frames.
+LOG (sgmm2-est[5.5.208~1-b0fc0]:UpdateW():estimate-am-sgmm2.cc:1379) Predicted objf impr for w, iter = 1, i = 5 is 1.84158e-05 per frame over 2823.78 frames.
+LOG (sgmm2-est[5.5.208~1-b0fc0]:UpdateW():estimate-am-sgmm2.cc:1379) Predicted objf impr for w, iter = 1, i = 6 is 1.7288e-05 per frame over 4094.36 frames.
+LOG (sgmm2-est[5.5.208~1-b0fc0]:UpdateW():estimate-am-sgmm2.cc:1379) Predicted objf impr for w, iter = 1, i = 7 is 1.47224e-05 per frame over 6323.09 frames.
+LOG (sgmm2-est[5.5.208~1-b0fc0]:UpdateW():estimate-am-sgmm2.cc:1379) Predicted objf impr for w, iter = 1, i = 8 is 1.93541e-05 per frame over 2816.21 frames.
+LOG (sgmm2-est[5.5.208~1-b0fc0]:UpdateW():estimate-am-sgmm2.cc:1379) Predicted objf impr for w, iter = 1, i = 9 is 1.7556e-05 per frame over 4369.68 frames.
+LOG (sgmm2-est[5.5.208~1-b0fc0]:UpdateW():estimate-am-sgmm2.cc:1379) Predicted objf impr for w, iter = 2, i = 0 is 1.8235e-05 per frame over 4028.62 frames.
+LOG (sgmm2-est[5.5.208~1-b0fc0]:UpdateW():estimate-am-sgmm2.cc:1379) Predicted objf impr for w, iter = 2, i = 1 is 1.8101e-05 per frame over 3235.4 frames.
+LOG (sgmm2-est[5.5.208~1-b0fc0]:UpdateW():estimate-am-sgmm2.cc:1379) Predicted objf impr for w, iter = 2, i = 2 is 1.79961e-05 per frame over 4445.73 frames.
+LOG (sgmm2-est[5.5.208~1-b0fc0]:UpdateW():estimate-am-sgmm2.cc:1379) Predicted objf impr for w, iter = 2, i = 3 is 1.69774e-05 per frame over 5478.04 frames.
+LOG (sgmm2-est[5.5.208~1-b0fc0]:UpdateW():estimate-am-sgmm2.cc:1379) Predicted objf impr for w, iter = 2, i = 4 is 1.54397e-05 per frame over 4063.6 frames.
+LOG (sgmm2-est[5.5.208~1-b0fc0]:UpdateW():estimate-am-sgmm2.cc:1379) Predicted objf impr for w, iter = 2, i = 5 is 1.12741e-05 per frame over 2823.78 frames.
+LOG (sgmm2-est[5.5.208~1-b0fc0]:UpdateW():estimate-am-sgmm2.cc:1379) Predicted objf impr for w, iter = 2, i = 6 is 1.06832e-05 per frame over 4094.36 frames.
+LOG (sgmm2-est[5.5.208~1-b0fc0]:UpdateW():estimate-am-sgmm2.cc:1379) Predicted objf impr for w, iter = 2, i = 7 is 1.20853e-05 per frame over 6323.09 frames.
+LOG (sgmm2-est[5.5.208~1-b0fc0]:UpdateW():estimate-am-sgmm2.cc:1379) Predicted objf impr for w, iter = 2, i = 8 is 1.26422e-05 per frame over 2816.21 frames.
+LOG (sgmm2-est[5.5.208~1-b0fc0]:UpdateW():estimate-am-sgmm2.cc:1379) Predicted objf impr for w, iter = 2, i = 9 is 1.30855e-05 per frame over 4369.68 frames.
+LOG (sgmm2-est[5.5.208~1-b0fc0]:UpdateW():estimate-am-sgmm2.cc:1433) **Overall objf impr for w is 0.000240394, actual 0.00033002, over 1.12478e+06 frames
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 1: Floored 2 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 6: Floored 2 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 36: Floored 1 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 38: Floored 5 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 41: Floored 3 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 42: Floored 5 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 49: Floored 1 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 50: Floored 2 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 51: Floored 2 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 68: Floored 2 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 76: Floored 3 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 80: Floored 2 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 84: Floored 1 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 85: Floored 4 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 86: Floored 2 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 94: Floored 1 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 95: Floored 2 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 96: Floored 5 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 97: Floored 2 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 108: Floored 1 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 109: Floored 4 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 116: Floored 2 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 135: Floored 2 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 144: Floored 5 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 145: Floored 4 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 147: Floored 3 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 148: Floored 1 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 150: Floored 3 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 151: Floored 2 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 156: Floored 1 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 174: Floored 3 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 176: Floored 2 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 178: Floored 2 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 179: Floored 2 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 185: Floored 3 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 186: Floored 6 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 187: Floored 3 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 218: Floored 1 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 220: Floored 1 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 232: Floored 3 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 235: Floored 3 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 236: Floored 2 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 238: Floored 1 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 247: Floored 2 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 248: Floored 4 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 262: Floored 2 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 269: Floored 1 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 276: Floored 1 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 294: Floored 1 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 295: Floored 3 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 296: Floored 2 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 297: Floored 6 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 298: Floored 3 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 300: Floored 1 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 306: Floored 1 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 310: Floored 1 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 311: Floored 3 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 312: Floored 1 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 326: Floored 4 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 343: Floored 1 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 346: Floored 2 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 351: Floored 2 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 352: Floored 3 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 353: Floored 1 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 360: Floored 1 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 370: Floored 2 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 373: Floored 6 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 378: Floored 3 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 381: Floored 3 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 382: Floored 3 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 384: Floored 1 covariance eigenvalues.
+WARNING (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1649) For Gaussian component 399: Floored 2 covariance eigenvalues.
+LOG (sgmm2-est[5.5.208~1-b0fc0]:UpdateVars():estimate-am-sgmm2.cc:1675) **Overall objf impr for variance update = 0.00226129 over 1.12478e+06 frames
+LOG (sgmm2-est[5.5.208~1-b0fc0]:UpdateSubstateWeights():estimate-am-sgmm2.cc:1684) Updating substate mixture weights
+LOG (sgmm2-est[5.5.208~1-b0fc0]:UpdateSubstateWeights():estimate-am-sgmm2.cc:1707) **Overall objf impr for c is 0, over 1.12478e+06 frames.
+LOG (sgmm2-est[5.5.208~1-b0fc0]:RenormalizeV():estimate-am-sgmm2.cc:969) Scatter of vectors v is : 
+LOG (sgmm2-est[5.5.208~1-b0fc0]:PrintEigs():matrix/sp-matrix.h:207) PrintEigs: Sigma:  [ 0.988835 0.990136 0.99116 0.992631 0.993016 0.993815 0.994276 0.994816 0.995532 0.995936 0.995885 0.996941 0.997029 0.99743 0.997536 0.9979 0.998639 0.999058 0.999796 0.999959 1.00037 1.00071 1.00111 1.00169 1.00215 1.00238 1.00283 1.00363 1.00388 1.00418 1.00487 1.00508 1.0054 1.01338 1.00644 1.00796 1.00838 1.00865 1.01204 1.01135 1.01006 ]
+LOG (sgmm2-est[5.5.208~1-b0fc0]:RenormalizeV():estimate-am-sgmm2.cc:991) Note on the next diagnostic: the first number is generally not that meaningful as it relates to the static offset
+LOG (sgmm2-est[5.5.208~1-b0fc0]:PrintEigs():matrix/sp-matrix.h:207) PrintEigs: H_sm_proj (Significance of dims in vector space.. note):  [ 86.5616 10.1561 9.00927 7.16592 5.70218 5.5448 5.01742 4.76563 4.25017 3.99354 3.8429 3.58186 3.37783 3.19416 2.91131 2.81154 2.67086 2.60146 2.49568 2.42651 2.25587 0.831508 0.911373 1.01242 1.06518 1.14397 2.13059 2.06366 1.9788 1.87663 1.82786 1.72623 1.23027 1.27067 1.35311 1.33068 1.641 1.62083 1.52351 1.45922 1.49427 ]
+LOG (sgmm2-est[5.5.208~1-b0fc0]:RenormalizeV():estimate-am-sgmm2.cc:1037) Renormalized subspace.
+LOG (sgmm2-est[5.5.208~1-b0fc0]:Update():estimate-am-sgmm2.cc:673) *Overall auxf improvement, combining all parameters, is 0.0344381
+LOG (sgmm2-est[5.5.208~1-b0fc0]:Update():estimate-am-sgmm2.cc:676) ***Overall data likelihood is 0 over 1.12478e+06 frames.
+LOG (sgmm2-est[5.5.208~1-b0fc0]:main():sgmm2-est.cc:144) Removing speaker space (projections N_)
+LOG (sgmm2-est[5.5.208~1-b0fc0]:ComputeNormalizers():am-sgmm2.cc:858) Computing normalizers
+LOG (sgmm2-est[5.5.208~1-b0fc0]:ComputeNormalizers():am-sgmm2.cc:865) Entropy of weights in substates is 2.10312 over 9475 substates, equivalent to perplexity of 8.1917
+LOG (sgmm2-est[5.5.208~1-b0fc0]:ComputeNormalizers():am-sgmm2.cc:869) Done computing normalizers
+LOG (sgmm2-est[5.5.208~1-b0fc0]:main():sgmm2-est.cc:158) Written model to exp/sgmm2_4/27.alimdl
+# Accounting: time=15 threads=1
+# Ended (code 0) at Wed Feb 27 15:13:14 +07 2019, elapsed time 15 seconds

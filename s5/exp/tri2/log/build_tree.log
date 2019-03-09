@@ -1,0 +1,100 @@
+# build-tree --verbose=1 --max-leaves=2500 --cluster-thresh=-1 exp/tri2/treeacc data/lang/phones/roots.int exp/tri2/questions.qst data/lang/topo exp/tri2/tree 
+# Started at Wed Feb 27 14:20:48 +07 2019
+#
+build-tree --verbose=1 --max-leaves=2500 --cluster-thresh=-1 exp/tri2/treeacc data/lang/phones/roots.int exp/tri2/questions.qst data/lang/topo exp/tri2/tree 
+LOG (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:104) Number of separate statistics is 46551
+LOG (build-tree[5.5.208~1-b0fc0]:BuildTree():build-tree.cc:161) BuildTree: before building trees, map has 48 leaves.
+LOG (build-tree[5.5.208~1-b0fc0]:SplitDecisionTree():build-tree-utils.cc:577) DoDecisionTreeSplit: split 2452 times, #leaves now 2500
+LOG (build-tree[5.5.208~1-b0fc0]:BuildTree():build-tree.cc:187) Setting clustering threshold to smallest split 397.188
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:BuildTree():build-tree.cc:196) After decision tree split, num-leaves = 2500, like-impr = 5.56431 per frame over 1.12482e+06 frames.
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:BuildTree():build-tree.cc:200) Including just phones that were split, improvement is 5.56431 per frame over 1.12482e+06 frames.
+LOG (build-tree[5.5.208~1-b0fc0]:BuildTree():build-tree.cc:215) BuildTree: removed 485 leaves.
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:ClusterEventMapToNClustersRestrictedByMap():build-tree-utils.cc:916) Number of non-empty clusters in map = 48
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:ClusterEventMapToNClustersRestrictedByMap():build-tree-utils.cc:917) Number of non-empty clusters = 2015
+LOG (build-tree[5.5.208~1-b0fc0]:BuildTree():build-tree.cc:231) BuildTree: Rounded num leaves to multiple of 8 by removing 7 leaves.
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:BuildTree():build-tree.cc:256) Objf change due to clustering -0.117679 per frame.
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:BuildTree():build-tree.cc:259) Normalizing over only split phones, this is: -0.117679 per frame.
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:BuildTree():build-tree.cc:262) Num-leaves is now 2008
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 2, low count 90
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 61, low count 20
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 127, low count 14
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 154, low count 78
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 156, low count 11
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 251, low count 11
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 306, low count 42
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 328, low count 48
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 402, low count 25
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 447, low count 80
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 452, low count 23
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 475, low count 67
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 495, low count 92
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 496, low count 12
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 501, low count 89
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 547, low count 71
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 550, low count 73
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 599, low count 88
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 612, low count 18
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 619, low count 53
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 646, low count 99
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 695, low count 87
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 708, low count 77
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 709, low count 97
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 736, low count 74
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 749, low count 10
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 765, low count 11
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 767, low count 77
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 809, low count 27
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 823, low count 72
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 828, low count 21
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 843, low count 81
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 848, low count 49
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 856, low count 95
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 863, low count 25
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 876, low count 23
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 879, low count 18
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 889, low count 47
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 903, low count 57
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 906, low count 14
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 938, low count 89
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 945, low count 97
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 961, low count 22
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 976, low count 63
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 978, low count 48
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 993, low count 72
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 1007, low count 29
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 1020, low count 18
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 1021, low count 11
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 1054, low count 57
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 1070, low count 25
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 1076, low count 16
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 1125, low count 93
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 1211, low count 64
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 1231, low count 38
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 1251, low count 26
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 1257, low count 20
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 1270, low count 66
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 1274, low count 94
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 1302, low count 34
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 1306, low count 79
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 1315, low count 17
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 1455, low count 17
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 1499, low count 28
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 1508, low count 65
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 1547, low count 85
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 1581, low count 31
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 1595, low count 51
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 1603, low count 21
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 1612, low count 69
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 1617, low count 24
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 1645, low count 90
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 1664, low count 22
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 1758, low count 11
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 1776, low count 60
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 1838, low count 80
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 1938, low count 11
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 1968, low count 19
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 1973, low count 13
+VLOG[1] (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:143) For pdf-id 1984, low count 99
+LOG (build-tree[5.5.208~1-b0fc0]:main():build-tree.cc:189) Wrote tree
+# Accounting: time=3 threads=1
+# Ended (code 0) at Wed Feb 27 14:20:51 +07 2019, elapsed time 3 seconds

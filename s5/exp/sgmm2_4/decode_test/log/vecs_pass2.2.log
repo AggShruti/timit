@@ -1,0 +1,89 @@
+# gunzip -c exp/sgmm2_4/decode_test/pre_lat.2.gz | sgmm2-rescore-lattice --speedup=true --spk-vecs=ark:exp/sgmm2_4/decode_test/pre_vecs.2 --utt2spk=ark:data/test/split5/2/utt2spk "--gselect=ark,s,cs:gunzip -c exp/sgmm2_4/decode_test/gselect.2.gz|" exp/sgmm2_4/final.mdl ark:- "ark,s,cs:apply-cmvn  --utt2spk=ark:data/test/split5/2/utt2spk scp:data/test/split5/2/cmvn.scp scp:data/test/split5/2/feats.scp ark:- | splice-feats --left-context=3 --right-context=3 ark:- ark:- | transform-feats exp/sgmm2_4/final.mat ark:- ark:- | transform-feats --utt2spk=ark:data/test/split5/2/utt2spk ark,s,cs:exp/tri3/decode_test/trans.2 ark:- ark:- |" ark:- | lattice-prune --acoustic-scale=0.1 --beam=4.0 ark:- ark:- | lattice-determinize-pruned --acoustic-scale=0.1 --beam=4.0 ark:- ark:- | lattice-to-post --acoustic-scale=0.1 ark:- ark:- | weight-silence-post 0.0 1 exp/sgmm2_4/final.mdl ark:- ark:- | sgmm2-est-spkvecs --spk2utt=ark:data/test/split5/2/spk2utt "--gselect=ark,s,cs:gunzip -c exp/sgmm2_4/decode_test/gselect.2.gz|" --spk-vecs=ark:exp/sgmm2_4/decode_test/pre_vecs.2 exp/sgmm2_4/final.mdl "ark,s,cs:apply-cmvn  --utt2spk=ark:data/test/split5/2/utt2spk scp:data/test/split5/2/cmvn.scp scp:data/test/split5/2/feats.scp ark:- | splice-feats --left-context=3 --right-context=3 ark:- ark:- | transform-feats exp/sgmm2_4/final.mat ark:- ark:- | transform-feats --utt2spk=ark:data/test/split5/2/utt2spk ark,s,cs:exp/tri3/decode_test/trans.2 ark:- ark:- |" ark,s,cs:- ark:exp/sgmm2_4/decode_test/vecs.2 
+# Started at Wed Feb 27 15:18:54 +07 2019
+#
+sgmm2-rescore-lattice --speedup=true --spk-vecs=ark:exp/sgmm2_4/decode_test/pre_vecs.2 --utt2spk=ark:data/test/split5/2/utt2spk '--gselect=ark,s,cs:gunzip -c exp/sgmm2_4/decode_test/gselect.2.gz|' exp/sgmm2_4/final.mdl ark:- 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/test/split5/2/utt2spk scp:data/test/split5/2/cmvn.scp scp:data/test/split5/2/feats.scp ark:- | splice-feats --left-context=3 --right-context=3 ark:- ark:- | transform-feats exp/sgmm2_4/final.mat ark:- ark:- | transform-feats --utt2spk=ark:data/test/split5/2/utt2spk ark,s,cs:exp/tri3/decode_test/trans.2 ark:- ark:- |' ark:- 
+lattice-to-post --acoustic-scale=0.1 ark:- ark:- 
+weight-silence-post 0.0 1 exp/sgmm2_4/final.mdl ark:- ark:- 
+lattice-prune --acoustic-scale=0.1 --beam=4.0 ark:- ark:- 
+sgmm2-est-spkvecs --spk2utt=ark:data/test/split5/2/spk2utt '--gselect=ark,s,cs:gunzip -c exp/sgmm2_4/decode_test/gselect.2.gz|' --spk-vecs=ark:exp/sgmm2_4/decode_test/pre_vecs.2 exp/sgmm2_4/final.mdl 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/test/split5/2/utt2spk scp:data/test/split5/2/cmvn.scp scp:data/test/split5/2/feats.scp ark:- | splice-feats --left-context=3 --right-context=3 ark:- ark:- | transform-feats exp/sgmm2_4/final.mat ark:- ark:- | transform-feats --utt2spk=ark:data/test/split5/2/utt2spk ark,s,cs:exp/tri3/decode_test/trans.2 ark:- ark:- |' ark,s,cs:- ark:exp/sgmm2_4/decode_test/vecs.2 
+lattice-determinize-pruned --acoustic-scale=0.1 --beam=4.0 ark:- ark:- 
+transform-feats exp/sgmm2_4/final.mat ark:- ark:- 
+splice-feats --left-context=3 --right-context=3 ark:- ark:- 
+apply-cmvn --utt2spk=ark:data/test/split5/2/utt2spk scp:data/test/split5/2/cmvn.scp scp:data/test/split5/2/feats.scp ark:- 
+transform-feats --utt2spk=ark:data/test/split5/2/utt2spk ark,s,cs:exp/tri3/decode_test/trans.2 ark:- ark:- 
+transform-feats exp/sgmm2_4/final.mat ark:- ark:- 
+transform-feats --utt2spk=ark:data/test/split5/2/utt2spk ark,s,cs:exp/tri3/decode_test/trans.2 ark:- ark:- 
+splice-feats --left-context=3 --right-context=3 ark:- ark:- 
+apply-cmvn --utt2spk=ark:data/test/split5/2/utt2spk scp:data/test/split5/2/cmvn.scp scp:data/test/split5/2/feats.scp ark:- 
+LOG (lattice-prune[5.5.208~1-b0fc0]:main():lattice-prune.cc:95) For utterance FNLP0_SI1308, pruned #states from 9324 to 4693 and #arcs from 16891 to 7360
+LOG (lattice-prune[5.5.208~1-b0fc0]:main():lattice-prune.cc:95) For utterance FNLP0_SI1938, pruned #states from 6265 to 2941 and #arcs from 11255 to 4564
+LOG (lattice-prune[5.5.208~1-b0fc0]:main():lattice-prune.cc:95) For utterance FNLP0_SI678, pruned #states from 2405 to 1421 and #arcs from 4350 to 2271
+LOG (lattice-prune[5.5.208~1-b0fc0]:main():lattice-prune.cc:95) For utterance FNLP0_SX138, pruned #states from 5161 to 2754 and #arcs from 9302 to 4340
+LOG (lattice-prune[5.5.208~1-b0fc0]:main():lattice-prune.cc:95) For utterance FNLP0_SX228, pruned #states from 8824 to 3912 and #arcs from 16814 to 6329
+LOG (lattice-prune[5.5.208~1-b0fc0]:main():lattice-prune.cc:95) For utterance FNLP0_SX318, pruned #states from 3078 to 1856 and #arcs from 5395 to 2857
+LOG (lattice-prune[5.5.208~1-b0fc0]:main():lattice-prune.cc:95) For utterance FNLP0_SX408, pruned #states from 5775 to 3154 and #arcs from 10380 to 4984
+LOG (lattice-prune[5.5.208~1-b0fc0]:main():lattice-prune.cc:95) For utterance FNLP0_SX48, pruned #states from 3883 to 2517 and #arcs from 7019 to 4024
+LOG (lattice-prune[5.5.208~1-b0fc0]:main():lattice-prune.cc:95) For utterance FPAS0_SI1272, pruned #states from 1941 to 1255 and #arcs from 3526 to 1973
+LOG (sgmm2-est-spkvecs[5.5.208~1-b0fc0]:UpdateWithU():estimate-am-sgmm2.cc:1937) *Objf impr for speaker vector is 0.0362216 per frame, over 2356.07 frames.
+LOG (sgmm2-est-spkvecs[5.5.208~1-b0fc0]:main():sgmm2-est-spkvecs.cc:186) For speaker FNLP0, auxf-impr from speaker vector is 0.0362216, over 2356.07 frames.
+LOG (lattice-prune[5.5.208~1-b0fc0]:main():lattice-prune.cc:95) For utterance FPAS0_SI2204, pruned #states from 5650 to 2924 and #arcs from 10093 to 4599
+LOG (lattice-prune[5.5.208~1-b0fc0]:main():lattice-prune.cc:95) For utterance FPAS0_SI944, pruned #states from 4147 to 2171 and #arcs from 7514 to 3316
+LOG (lattice-prune[5.5.208~1-b0fc0]:main():lattice-prune.cc:95) For utterance FPAS0_SX134, pruned #states from 4684 to 2649 and #arcs from 8467 to 4099
+LOG (lattice-prune[5.5.208~1-b0fc0]:main():lattice-prune.cc:95) For utterance FPAS0_SX224, pruned #states from 2475 to 1433 and #arcs from 4492 to 2241
+LOG (lattice-prune[5.5.208~1-b0fc0]:main():lattice-prune.cc:95) For utterance FPAS0_SX314, pruned #states from 3763 to 1991 and #arcs from 6787 to 3096
+LOG (lattice-prune[5.5.208~1-b0fc0]:main():lattice-prune.cc:95) For utterance FPAS0_SX404, pruned #states from 2700 to 1726 and #arcs from 4926 to 2779
+LOG (lattice-prune[5.5.208~1-b0fc0]:main():lattice-prune.cc:95) For utterance FPAS0_SX44, pruned #states from 3233 to 2000 and #arcs from 5850 to 3187
+LOG (lattice-prune[5.5.208~1-b0fc0]:main():lattice-prune.cc:95) For utterance FPKT0_SI1538, pruned #states from 6298 to 3722 and #arcs from 11608 to 5958
+LOG (sgmm2-est-spkvecs[5.5.208~1-b0fc0]:UpdateWithU():estimate-am-sgmm2.cc:1937) *Objf impr for speaker vector is 0.0220158 per frame, over 1873.1 frames.
+LOG (sgmm2-est-spkvecs[5.5.208~1-b0fc0]:main():sgmm2-est-spkvecs.cc:186) For speaker FPAS0, auxf-impr from speaker vector is 0.0220158, over 1873.1 frames.
+LOG (lattice-prune[5.5.208~1-b0fc0]:main():lattice-prune.cc:95) For utterance FPKT0_SI2168, pruned #states from 2597 to 1554 and #arcs from 4695 to 2539
+LOG (lattice-prune[5.5.208~1-b0fc0]:main():lattice-prune.cc:95) For utterance FPKT0_SI908, pruned #states from 4145 to 2272 and #arcs from 7724 to 3678
+LOG (lattice-prune[5.5.208~1-b0fc0]:main():lattice-prune.cc:95) For utterance FPKT0_SX188, pruned #states from 4912 to 2606 and #arcs from 9139 to 4246
+LOG (lattice-prune[5.5.208~1-b0fc0]:main():lattice-prune.cc:95) For utterance FPKT0_SX278, pruned #states from 3626 to 2153 and #arcs from 6524 to 3428
+LOG (lattice-prune[5.5.208~1-b0fc0]:main():lattice-prune.cc:95) For utterance FPKT0_SX368, pruned #states from 4660 to 2844 and #arcs from 8359 to 4493
+LOG (lattice-prune[5.5.208~1-b0fc0]:main():lattice-prune.cc:95) For utterance FPKT0_SX8, pruned #states from 1716 to 1217 and #arcs from 2963 to 1868
+LOG (lattice-prune[5.5.208~1-b0fc0]:main():lattice-prune.cc:95) For utterance FPKT0_SX98, pruned #states from 1927 to 1204 and #arcs from 3459 to 1888
+LOG (lattice-prune[5.5.208~1-b0fc0]:main():lattice-prune.cc:95) For utterance MBPM0_SI1577, pruned #states from 1498 to 902 and #arcs from 2607 to 1388
+LOG (lattice-prune[5.5.208~1-b0fc0]:main():lattice-prune.cc:95) For utterance MBPM0_SI1584, pruned #states from 4072 to 2531 and #arcs from 7260 to 3908
+LOG (lattice-prune[5.5.208~1-b0fc0]:main():lattice-prune.cc:95) For utterance MBPM0_SI947, pruned #states from 3116 to 1830 and #arcs from 5569 to 2845
+LOG (sgmm2-est-spkvecs[5.5.208~1-b0fc0]:UpdateWithU():estimate-am-sgmm2.cc:1937) *Objf impr for speaker vector is 0.0226511 per frame, over 1813.44 frames.
+LOG (sgmm2-est-spkvecs[5.5.208~1-b0fc0]:main():sgmm2-est-spkvecs.cc:186) For speaker FPKT0, auxf-impr from speaker vector is 0.0226511, over 1813.44 frames.
+LOG (lattice-prune[5.5.208~1-b0fc0]:main():lattice-prune.cc:95) For utterance MBPM0_SX137, pruned #states from 3542 to 1970 and #arcs from 6346 to 3086
+LOG (lattice-prune[5.5.208~1-b0fc0]:main():lattice-prune.cc:95) For utterance MBPM0_SX227, pruned #states from 1724 to 1095 and #arcs from 3073 to 1722
+LOG (apply-cmvn[5.5.208~1-b0fc0]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 40 utterances, errors on 0
+LOG (lattice-prune[5.5.208~1-b0fc0]:main():lattice-prune.cc:95) For utterance MBPM0_SX317, pruned #states from 4148 to 2601 and #arcs from 7792 to 4262
+LOG (apply-cmvn[5.5.208~1-b0fc0]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 40 utterances, errors on 0
+LOG (lattice-prune[5.5.208~1-b0fc0]:main():lattice-prune.cc:95) For utterance MBPM0_SX407, pruned #states from 2237 to 1271 and #arcs from 3970 to 1949
+LOG (lattice-prune[5.5.208~1-b0fc0]:main():lattice-prune.cc:95) For utterance MBPM0_SX47, pruned #states from 2578 to 1410 and #arcs from 4668 to 2201
+LOG (sgmm2-est-spkvecs[5.5.208~1-b0fc0]:UpdateWithU():estimate-am-sgmm2.cc:1937) *Objf impr for speaker vector is 0.0147807 per frame, over 1849.3 frames.
+LOG (sgmm2-est-spkvecs[5.5.208~1-b0fc0]:main():sgmm2-est-spkvecs.cc:186) For speaker MBPM0, auxf-impr from speaker vector is 0.0147807, over 1849.3 frames.
+LOG (lattice-prune[5.5.208~1-b0fc0]:main():lattice-prune.cc:95) For utterance MCMJ0_SI1094, pruned #states from 5944 to 3147 and #arcs from 10944 to 5051
+LOG (lattice-prune[5.5.208~1-b0fc0]:main():lattice-prune.cc:95) For utterance MCMJ0_SI464, pruned #states from 5466 to 3230 and #arcs from 9888 to 5180
+LOG (lattice-prune[5.5.208~1-b0fc0]:main():lattice-prune.cc:95) For utterance MCMJ0_SI602, pruned #states from 8078 to 4363 and #arcs from 14919 to 7006
+LOG (lattice-prune[5.5.208~1-b0fc0]:main():lattice-prune.cc:95) For utterance MCMJ0_SX104, pruned #states from 2342 to 1503 and #arcs from 4167 to 2359
+LOG (transform-feats[5.5.208~1-b0fc0]:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -88.6037 over 11338 frames.
+LOG (transform-feats[5.5.208~1-b0fc0]:main():transform-feats.cc:161) Applied transform to 40 utterances; 0 had errors.
+LOG (lattice-prune[5.5.208~1-b0fc0]:main():lattice-prune.cc:95) For utterance MCMJ0_SX14, pruned #states from 4547 to 2844 and #arcs from 8291 to 4598
+LOG (lattice-prune[5.5.208~1-b0fc0]:main():lattice-prune.cc:95) For utterance MCMJ0_SX194, pruned #states from 3057 to 1709 and #arcs from 5532 to 2704
+LOG (transform-feats[5.5.208~1-b0fc0]:main():transform-feats.cc:158) Overall average logdet is 1.06679 over 11338 frames.
+LOG (transform-feats[5.5.208~1-b0fc0]:main():transform-feats.cc:161) Applied transform to 40 utterances; 0 had errors.
+LOG (transform-feats[5.5.208~1-b0fc0]:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -88.6037 over 11338 frames.
+LOG (transform-feats[5.5.208~1-b0fc0]:main():transform-feats.cc:161) Applied transform to 40 utterances; 0 had errors.
+LOG (lattice-prune[5.5.208~1-b0fc0]:main():lattice-prune.cc:95) For utterance MCMJ0_SX284, pruned #states from 5273 to 3269 and #arcs from 9602 to 5259
+LOG (lattice-prune[5.5.208~1-b0fc0]:main():lattice-prune.cc:95) For utterance MCMJ0_SX374, pruned #states from 3057 to 1649 and #arcs from 5455 to 2571
+LOG (sgmm2-rescore-lattice[5.5.208~1-b0fc0]:main():sgmm2-rescore-lattice.cc:159) Done 40 lattices, errors on 0
+LOG (transform-feats[5.5.208~1-b0fc0]:main():transform-feats.cc:158) Overall average logdet is 1.06679 over 11338 frames.
+LOG (transform-feats[5.5.208~1-b0fc0]:main():transform-feats.cc:161) Applied transform to 40 utterances; 0 had errors.
+LOG (lattice-prune[5.5.208~1-b0fc0]:main():lattice-prune.cc:104) Overall, pruned from on average 4096.7 to 2307.32 states, and from 7440.38 to 3655.15 arcs, over 40 utterances.
+LOG (lattice-prune[5.5.208~1-b0fc0]:main():lattice-prune.cc:108) Done 40 lattices.
+LOG (lattice-determinize-pruned[5.5.208~1-b0fc0]:main():lattice-determinize-pruned.cc:159) Average input-lattice depth (measured at at state level) is 8.47848, output depth is 5.29088, over 11338 frames  (average num-frames = 283.45).
+LOG (lattice-determinize-pruned[5.5.208~1-b0fc0]:main():lattice-determinize-pruned.cc:164) Done 40 lattices, determinization finished earlier than specified by the beam (or output was empty) on 0 of these.
+LOG (lattice-to-post[5.5.208~1-b0fc0]:main():lattice-to-post.cc:106) Overall average log-like/frame is -4.85813 over 11338 frames.  Average acoustic like/frame is -4.49469
+LOG (lattice-to-post[5.5.208~1-b0fc0]:main():lattice-to-post.cc:110) Done 40 lattices.
+LOG (weight-silence-post[5.5.208~1-b0fc0]:main():weight-silence-post.cc:95) Done 40 posteriors.
+LOG (sgmm2-est-spkvecs[5.5.208~1-b0fc0]:UpdateWithU():estimate-am-sgmm2.cc:1937) *Objf impr for speaker vector is 0.0218624 per frame, over 2236.67 frames.
+LOG (sgmm2-est-spkvecs[5.5.208~1-b0fc0]:main():sgmm2-est-spkvecs.cc:186) For speaker MCMJ0, auxf-impr from speaker vector is 0.0218624, over 2236.67 frames.
+LOG (sgmm2-est-spkvecs[5.5.208~1-b0fc0]:main():sgmm2-est-spkvecs.cc:250) Overall auxf impr per frame is 0.0240792 over 10128.6 frames.
+LOG (sgmm2-est-spkvecs[5.5.208~1-b0fc0]:main():sgmm2-est-spkvecs.cc:252) Done 40 files, 0 with errors.
+# Accounting: time=11 threads=1
+# Ended (code 0) at Wed Feb 27 15:19:05 +07 2019, elapsed time 11 seconds

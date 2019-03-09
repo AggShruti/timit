@@ -1,0 +1,22 @@
+# sgmm2-acc-stats --spk-vecs=ark:exp/sgmm2_4/vecs.28 --utt2spk=ark:data/train/split30/28/utt2spk --update-flags=vMwSctu "--gselect=ark,s,cs:gunzip -c exp/sgmm2_4/gselect.28.gz|" --rand-prune=0.1 exp/sgmm2_4/12.mdl "ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split30/28/utt2spk scp:data/train/split30/28/cmvn.scp scp:data/train/split30/28/feats.scp ark:- | splice-feats --left-context=3 --right-context=3 ark:- ark:- | transform-feats exp/tri3_ali/final.mat ark:- ark:- | transform-feats --utt2spk=ark:data/train/split30/28/utt2spk ark,s,cs:exp/tri3_ali/trans.28 ark:- ark:- |" "ark,s,cs:gunzip -c exp/sgmm2_4/ali.28.gz | ali-to-post ark:- ark:-|" exp/sgmm2_4/12.28.acc 
+# Started at Wed Feb 27 14:57:51 +07 2019
+#
+sgmm2-acc-stats --spk-vecs=ark:exp/sgmm2_4/vecs.28 --utt2spk=ark:data/train/split30/28/utt2spk --update-flags=vMwSctu '--gselect=ark,s,cs:gunzip -c exp/sgmm2_4/gselect.28.gz|' --rand-prune=0.1 exp/sgmm2_4/12.mdl 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split30/28/utt2spk scp:data/train/split30/28/cmvn.scp scp:data/train/split30/28/feats.scp ark:- | splice-feats --left-context=3 --right-context=3 ark:- ark:- | transform-feats exp/tri3_ali/final.mat ark:- ark:- | transform-feats --utt2spk=ark:data/train/split30/28/utt2spk ark,s,cs:exp/tri3_ali/trans.28 ark:- ark:- |' 'ark,s,cs:gunzip -c exp/sgmm2_4/ali.28.gz | ali-to-post ark:- ark:-|' exp/sgmm2_4/12.28.acc 
+transform-feats --utt2spk=ark:data/train/split30/28/utt2spk ark,s,cs:exp/tri3_ali/trans.28 ark:- ark:- 
+splice-feats --left-context=3 --right-context=3 ark:- ark:- 
+apply-cmvn --utt2spk=ark:data/train/split30/28/utt2spk scp:data/train/split30/28/cmvn.scp scp:data/train/split30/28/feats.scp ark:- 
+transform-feats exp/tri3_ali/final.mat ark:- ark:- 
+ali-to-post ark:- ark:- 
+LOG (sgmm2-acc-stats[5.5.208~1-b0fc0]:main():sgmm2-acc-stats.cc:194) Processed 50 utterances; for utterance MTCS0_SI2265 avg. like is -38.8539 over 155 frames.
+LOG (sgmm2-acc-stats[5.5.208~1-b0fc0]:main():sgmm2-acc-stats.cc:194) Processed 100 utterances; for utterance MTJS0_SX112 avg. like is -45.8768 over 333 frames.
+LOG (ali-to-post[5.5.208~1-b0fc0]:main():ali-to-post.cc:73) Converted 128 alignments.
+LOG (apply-cmvn[5.5.208~1-b0fc0]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 128 utterances, errors on 0
+LOG (transform-feats[5.5.208~1-b0fc0]:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -88.6037 over 40596 frames.
+LOG (transform-feats[5.5.208~1-b0fc0]:main():transform-feats.cc:161) Applied transform to 128 utterances; 0 had errors.
+LOG (transform-feats[5.5.208~1-b0fc0]:main():transform-feats.cc:158) Overall average logdet is 2.7953 over 40596 frames.
+LOG (transform-feats[5.5.208~1-b0fc0]:main():transform-feats.cc:161) Applied transform to 128 utterances; 0 had errors.
+LOG (sgmm2-acc-stats[5.5.208~1-b0fc0]:main():sgmm2-acc-stats.cc:203) Overall like per frame (Gaussian only) = -42.2395 over 40596 frames.
+LOG (sgmm2-acc-stats[5.5.208~1-b0fc0]:main():sgmm2-acc-stats.cc:206) Done 128 files, 0 with errors.
+LOG (sgmm2-acc-stats[5.5.208~1-b0fc0]:main():sgmm2-acc-stats.cc:215) Written accs.
+# Accounting: time=5 threads=1
+# Ended (code 0) at Wed Feb 27 14:57:56 +07 2019, elapsed time 5 seconds

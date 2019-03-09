@@ -1,0 +1,162 @@
+# nnet-subset-egs --n=2000 --randomize-order=true --srand=10 ark:exp/tri4_nnet/egs/train_diagnostic.egs ark:- | nnet-combine-fast --use-gpu=no --num-threads=16 --verbose=3 --minibatch-size=125 exp/tri4_nnet/11.mdl ark:- exp/tri4_nnet/11.mdl 
+# Started at Wed Feb 27 16:54:25 +07 2019
+#
+nnet-subset-egs --n=2000 --randomize-order=true --srand=10 ark:exp/tri4_nnet/egs/train_diagnostic.egs ark:- 
+nnet-combine-fast --use-gpu=no --num-threads=16 --verbose=3 --minibatch-size=125 exp/tri4_nnet/11.mdl ark:- exp/tri4_nnet/11.mdl 
+LOG (nnet-subset-egs[5.5.208~1-b0fc0]:main():nnet-subset-egs.cc:92) Selected a subset of 2000 out of 4000 neural-network training examples 
+LOG (nnet-combine-fast[5.5.208~1-b0fc0]:main():nnet-combine-fast.cc:108) Read 2000 examples from the validation set.
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 0 for this minibatch is 2.01663
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 0 for this minibatch is 1.98784
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 0 for this minibatch is 1.96656
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 1 for this minibatch is 2.01663
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 0 for this minibatch is 1.96502
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 1 for this minibatch is 1.98784
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 2 for this minibatch is 0.127246
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 3 for this minibatch is 2.78708
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 2 for this minibatch is 0.128896
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 1 for this minibatch is 1.96656
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 3 for this minibatch is 2.83246
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 2 for this minibatch is 0.12838
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 3 for this minibatch is 2.80454
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 4 for this minibatch is 0.576587
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 1 for this minibatch is 1.96502
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 5 for this minibatch is 5.908
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 4 for this minibatch is 0.574574
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 2 for this minibatch is 0.122338
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 5 for this minibatch is 5.84174
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 3 for this minibatch is 2.75554
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 0 for this minibatch is 2.07763
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 0 for this minibatch is 2.11744
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 0 for this minibatch is 2.03023
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 1 for this minibatch is 2.07763
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 1 for this minibatch is 2.11744
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 2 for this minibatch is 0.131346
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 2 for this minibatch is 0.134109
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 3 for this minibatch is 2.92072
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 3 for this minibatch is 2.92182
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 1 for this minibatch is 2.03023
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 2 for this minibatch is 0.134049
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 3 for this minibatch is 2.92102
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 4 for this minibatch is 0.572952
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 5 for this minibatch is 5.81656
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 6 for this minibatch is 0.696889
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 0 for this minibatch is 2.19771
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 4 for this minibatch is 0.579939
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 1 for this minibatch is 2.19771
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 4 for this minibatch is 0.582381
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 5 for this minibatch is 5.89507
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 4 for this minibatch is 0.572243
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 5 for this minibatch is 6.02034
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 2 for this minibatch is 0.138243
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 5 for this minibatch is 5.79214
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 3 for this minibatch is 3.03114
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 4 for this minibatch is 0.587209
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 5 for this minibatch is 6.05028
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 0 for this minibatch is 2.06794
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 4 for this minibatch is 0.580847
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 0 for this minibatch is 1.91678
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 5 for this minibatch is 5.9206
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 0 for this minibatch is 2.09329
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 1 for this minibatch is 2.06794
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 7 for this minibatch is 5.67715
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 2 for this minibatch is 0.130492
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 3 for this minibatch is 2.88294
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 0 for this minibatch is 2.05617
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 1 for this minibatch is 2.09329
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 1 for this minibatch is 2.05617
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 2 for this minibatch is 0.130761
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 3 for this minibatch is 2.89452
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 0 for this minibatch is 2.06889
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 2 for this minibatch is 0.128043
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 3 for this minibatch is 2.81665
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 6 for this minibatch is 0.702628
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 4 for this minibatch is 0.577361
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 1 for this minibatch is 2.06889
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 5 for this minibatch is 5.93263
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 2 for this minibatch is 0.133716
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 3 for this minibatch is 2.95497
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 4 for this minibatch is 0.583447
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 5 for this minibatch is 6.05287
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 0 for this minibatch is 1.95061
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 1 for this minibatch is 1.91678
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 1 for this minibatch is 1.95061
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 2 for this minibatch is 0.12358
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 2 for this minibatch is 0.129862
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 3 for this minibatch is 2.76082
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 3 for this minibatch is 2.81304
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 4 for this minibatch is 0.578679
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 5 for this minibatch is 5.91494
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 4 for this minibatch is 0.575517
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 5 for this minibatch is 5.85787
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 0 for this minibatch is 2.08042
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 6 for this minibatch is 0.700872
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 4 for this minibatch is 0.577004
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 5 for this minibatch is 5.82131
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 0 for this minibatch is 2.02295
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 1 for this minibatch is 2.08042
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 4 for this minibatch is 0.571869
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 5 for this minibatch is 5.84239
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 2 for this minibatch is 0.130962
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 3 for this minibatch is 2.85362
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 1 for this minibatch is 2.02295
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 7 for this minibatch is 5.69251
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 2 for this minibatch is 0.131469
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 3 for this minibatch is 2.81146
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 4 for this minibatch is 0.574451
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 5 for this minibatch is 5.87604
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:Propagate():nnet-update.cc:114) Stddev of data for component 6 for this minibatch is 0.701457
+VLOG[2] (nnet-combine-fast[5.5.208~1-b0fc0]:DoBackpropParallel():nnet-update-parallel.cc:264) Did backprop on 2000 examples, average log-prob per frame is -1.77589
+LOG (nnet-combine-fast[5.5.208~1-b0fc0]:GetInitialModel():combine-nnet-fast.cc:403) Objective functions for the source neural nets are  [ -1.77589 ]
+LOG (nnet-combine-fast[5.5.208~1-b0fc0]:GetInitialParams():combine-nnet-fast.cc:282) Initializing with neural net with index 0
+VLOG[2] (nnet-combine-fast[5.5.208~1-b0fc0]:DoBackpropParallel():nnet-update-parallel.cc:264) Did backprop on 2000 examples, average log-prob per frame is -1.77589
+VLOG[2] (nnet-combine-fast[5.5.208~1-b0fc0]:ComputeObjfAndGradient():combine-nnet-fast.cc:347) Objf is -1.77589, raw gradient is  [ 0.0381526 0.0829229 0.347587 ]
+VLOG[2] (nnet-combine-fast[5.5.208~1-b0fc0]:DoBackpropParallel():nnet-update-parallel.cc:264) Did backprop on 2000 examples, average log-prob per frame is -1.76719
+VLOG[2] (nnet-combine-fast[5.5.208~1-b0fc0]:ComputeObjfAndGradient():combine-nnet-fast.cc:347) Objf is -1.76719, raw gradient is  [ 0.0258802 0.0634683 0.260029 ]
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:StepSizeIteration():optimization.cc:240) In step size iteration, function value changed -1.77589 to -1.76719
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:StepSizeIteration():optimization.cc:323) d = 2, iter = 0, action = accept
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:AcceptStep():optimization.cc:194) Accepted step; length was 0.0479527, prod was -0.00255011
+VLOG[2] (nnet-combine-fast[5.5.208~1-b0fc0]:DoBackpropParallel():nnet-update-parallel.cc:264) Did backprop on 2000 examples, average log-prob per frame is -1.76272
+VLOG[2] (nnet-combine-fast[5.5.208~1-b0fc0]:ComputeObjfAndGradient():combine-nnet-fast.cc:347) Objf is -1.76272, raw gradient is  [ 0.0662386 0.00551805 0.131497 ]
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:StepSizeIteration():optimization.cc:240) In step size iteration, function value changed -1.76719 to -1.76272
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:StepSizeIteration():optimization.cc:323) d = 2, iter = 1, action = accept
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:AcceptStep():optimization.cc:194) Accepted step; length was 0.181505, prod was -0.0407038
+VLOG[2] (nnet-combine-fast[5.5.208~1-b0fc0]:DoBackpropParallel():nnet-update-parallel.cc:264) Did backprop on 2000 examples, average log-prob per frame is -1.75573
+VLOG[2] (nnet-combine-fast[5.5.208~1-b0fc0]:ComputeObjfAndGradient():combine-nnet-fast.cc:347) Objf is -1.75573, raw gradient is  [ -0.0145188 -0.0175636 -0.0816254 ]
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:StepSizeIteration():optimization.cc:240) In step size iteration, function value changed -1.76272 to -1.75573
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:StepSizeIteration():optimization.cc:323) d = 2, iter = 2, action = accept
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:AcceptStep():optimization.cc:194) Accepted step; length was 0.101773, prod was -0.0327671
+VLOG[2] (nnet-combine-fast[5.5.208~1-b0fc0]:DoBackpropParallel():nnet-update-parallel.cc:264) Did backprop on 2000 examples, average log-prob per frame is -1.75398
+VLOG[2] (nnet-combine-fast[5.5.208~1-b0fc0]:ComputeObjfAndGradient():combine-nnet-fast.cc:347) Objf is -1.75398, raw gradient is  [ -0.00602639 -0.00639278 -0.0191867 ]
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:StepSizeIteration():optimization.cc:240) In step size iteration, function value changed -1.75573 to -1.75398
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:StepSizeIteration():optimization.cc:323) d = 2, iter = 3, action = accept
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:AcceptStep():optimization.cc:194) Accepted step; length was 0.0569256, prod was -0.00199104
+VLOG[2] (nnet-combine-fast[5.5.208~1-b0fc0]:DoBackpropParallel():nnet-update-parallel.cc:264) Did backprop on 2000 examples, average log-prob per frame is -1.75414
+VLOG[2] (nnet-combine-fast[5.5.208~1-b0fc0]:ComputeObjfAndGradient():combine-nnet-fast.cc:347) Objf is -1.75414, raw gradient is  [ 0.00960477 0.00802449 0.00790186 ]
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:StepSizeIteration():optimization.cc:240) In step size iteration, function value changed -1.75398 to -1.75414
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:StepSizeIteration():optimization.cc:323) d = 2, iter = 4, action = decrease
+VLOG[2] (nnet-combine-fast[5.5.208~1-b0fc0]:DoBackpropParallel():nnet-update-parallel.cc:264) Did backprop on 2000 examples, average log-prob per frame is -1.7538
+VLOG[2] (nnet-combine-fast[5.5.208~1-b0fc0]:ComputeObjfAndGradient():combine-nnet-fast.cc:347) Objf is -1.7538, raw gradient is  [ 0.000764963 -0.000672252 -0.00776826 ]
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:StepSizeIteration():optimization.cc:240) In step size iteration, function value changed -1.75398 to -1.7538
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:StepSizeIteration():optimization.cc:323) d = 2, iter = 4, action = accept
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:AcceptStep():optimization.cc:194) Accepted step; length was 0.017953, prod was -0.000422951
+VLOG[2] (nnet-combine-fast[5.5.208~1-b0fc0]:DoBackpropParallel():nnet-update-parallel.cc:264) Did backprop on 2000 examples, average log-prob per frame is -1.75378
+VLOG[2] (nnet-combine-fast[5.5.208~1-b0fc0]:ComputeObjfAndGradient():combine-nnet-fast.cc:347) Objf is -1.75378, raw gradient is  [ -9.34849e-05 -6.7379e-05 0.000134348 ]
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:StepSizeIteration():optimization.cc:240) In step size iteration, function value changed -1.7538 to -1.75378
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:StepSizeIteration():optimization.cc:323) d = 2, iter = 5, action = accept
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:AcceptStep():optimization.cc:194) Accepted step; length was 0.00647519, prod was -5.61525e-05
+VLOG[2] (nnet-combine-fast[5.5.208~1-b0fc0]:DoBackpropParallel():nnet-update-parallel.cc:264) Did backprop on 2000 examples, average log-prob per frame is -1.75378
+VLOG[2] (nnet-combine-fast[5.5.208~1-b0fc0]:ComputeObjfAndGradient():combine-nnet-fast.cc:347) Objf is -1.75378, raw gradient is  [ -9.43565e-06 2.79026e-05 2.03772e-05 ]
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:StepSizeIteration():optimization.cc:240) In step size iteration, function value changed -1.75378 to -1.75378
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:StepSizeIteration():optimization.cc:323) d = 2, iter = 6, action = accept
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:AcceptStep():optimization.cc:194) Accepted step; length was 0.00026214, prod was -2.48623e-07
+VLOG[2] (nnet-combine-fast[5.5.208~1-b0fc0]:DoBackpropParallel():nnet-update-parallel.cc:264) Did backprop on 2000 examples, average log-prob per frame is -1.75378
+VLOG[2] (nnet-combine-fast[5.5.208~1-b0fc0]:ComputeObjfAndGradient():combine-nnet-fast.cc:347) Objf is -1.75378, raw gradient is  [ 2.12479e-06 -1.02901e-06 -3.46804e-06 ]
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:StepSizeIteration():optimization.cc:240) In step size iteration, function value changed -1.75378 to -1.75378
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:StepSizeIteration():optimization.cc:323) d = 2, iter = 7, action = accept
+VLOG[3] (nnet-combine-fast[5.5.208~1-b0fc0]:AcceptStep():optimization.cc:194) Accepted step; length was 9.67539e-05, prod was -1.66664e-08
+LOG (nnet-combine-fast[5.5.208~1-b0fc0]:ComputeCurrentNnet():combine-nnet-fast.cc:373) Scale parameters are  [
+  0.966528 1.12612 1.1124 ]
+LOG (nnet-combine-fast[5.5.208~1-b0fc0]:FastNnetCombiner():combine-nnet-fast.cc:152) Combining nnets, objf per frame changed from -1.77589 to -1.75378
+LOG (nnet-combine-fast[5.5.208~1-b0fc0]:main():nnet-combine-fast.cc:124) Finished combining neural nets, wrote model to exp/tri4_nnet/11.mdl
+# Accounting: time=5 threads=1
+# Ended (code 0) at Wed Feb 27 16:54:30 +07 2019, elapsed time 5 seconds

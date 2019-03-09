@@ -1,0 +1,31 @@
+# sgmm2-latgen-faster --spk-vecs=ark:exp/sgmm2_4_ali/vecs.6 --utt2spk=ark:data/train/split30/6/utt2spk "--gselect=ark,s,cs:gunzip -c exp/sgmm2_4_ali/gselect.6.gz|" --beam=18.0 --lattice-beam=10.0 --acoustic-scale=0.2 --max-mem=20000000 --max-active=5000 --word-symbol-table=data/lang/words.txt exp/sgmm2_4_ali/final.mdl exp/sgmm2_4_denlats/dengraph/HCLG.fst "ark,s,cs:apply-cmvn --utt2spk=ark:data/train/split30/6/split30utt/15/utt2spk scp:data/train/split30/6/split30utt/15/cmvn.scp scp:data/train/split30/6/split30utt/15/feats.scp ark:- | splice-feats --left-context=3 --right-context=3 ark:- ark:- | transform-feats exp/sgmm2_4_ali/final.mat ark:- ark:- | transform-feats --utt2spk=ark:data/train/split30/6/split30utt/15/utt2spk ark:exp/tri3_ali/trans.6 ark:- ark:- |" "ark:|gzip -c >exp/sgmm2_4_denlats/lat.6.15.gz" 
+# Started at Wed Feb 27 15:29:14 +07 2019
+#
+sgmm2-latgen-faster --spk-vecs=ark:exp/sgmm2_4_ali/vecs.6 --utt2spk=ark:data/train/split30/6/utt2spk '--gselect=ark,s,cs:gunzip -c exp/sgmm2_4_ali/gselect.6.gz|' --beam=18.0 --lattice-beam=10.0 --acoustic-scale=0.2 --max-mem=20000000 --max-active=5000 --word-symbol-table=data/lang/words.txt exp/sgmm2_4_ali/final.mdl exp/sgmm2_4_denlats/dengraph/HCLG.fst 'ark,s,cs:apply-cmvn --utt2spk=ark:data/train/split30/6/split30utt/15/utt2spk scp:data/train/split30/6/split30utt/15/cmvn.scp scp:data/train/split30/6/split30utt/15/feats.scp ark:- | splice-feats --left-context=3 --right-context=3 ark:- ark:- | transform-feats exp/sgmm2_4_ali/final.mat ark:- ark:- | transform-feats --utt2spk=ark:data/train/split30/6/split30utt/15/utt2spk ark:exp/tri3_ali/trans.6 ark:- ark:- |' 'ark:|gzip -c >exp/sgmm2_4_denlats/lat.6.15.gz' 
+splice-feats --left-context=3 --right-context=3 ark:- ark:- 
+transform-feats --utt2spk=ark:data/train/split30/6/split30utt/15/utt2spk ark:exp/tri3_ali/trans.6 ark:- ark:- 
+transform-feats exp/sgmm2_4_ali/final.mat ark:- ark:- 
+apply-cmvn --utt2spk=ark:data/train/split30/6/split30utt/15/utt2spk scp:data/train/split30/6/split30utt/15/cmvn.scp scp:data/train/split30/6/split30utt/15/feats.scp ark:- 
+LOG (apply-cmvn[5.5.208~1-b0fc0]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 4 utterances, errors on 0
+LOG (transform-feats[5.5.208~1-b0fc0]:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -88.6037 over 1360 frames.
+LOG (transform-feats[5.5.208~1-b0fc0]:main():transform-feats.cc:161) Applied transform to 4 utterances; 0 had errors.
+FMEM0_SI1377 sil eh z dh iy z m ae l ah vcl d iy z ow v ax l ae cl sil s ow m ah s dh ix cl k y uh ax sil 
+LOG (sgmm2-latgen-faster[5.5.208~1-b0fc0]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:289) Log-like per frame for utterance FMEM0_SI1377 is -8.82765 over 385 frames.
+LOG (sgmm2-latgen-faster[5.5.208~1-b0fc0]:main():sgmm2-latgen-faster.cc:209) Log-like per frame for utterance FMEM0_SI1377 is -8.82765 over 385 frames.
+FMEM0_SI2007 sil t uw hh ih s cl p ah z el m eh n cl t sil dh ey ix s ah vcl n l iy w ih s n ow hh ey z sil 
+LOG (sgmm2-latgen-faster[5.5.208~1-b0fc0]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:289) Log-like per frame for utterance FMEM0_SI2007 is -8.99428 over 353 frames.
+LOG (sgmm2-latgen-faster[5.5.208~1-b0fc0]:main():sgmm2-latgen-faster.cc:209) Log-like per frame for utterance FMEM0_SI2007 is -8.99428 over 353 frames.
+LOG (transform-feats[5.5.208~1-b0fc0]:main():transform-feats.cc:158) Overall average logdet is -0.00392378 over 1360 frames.
+LOG (transform-feats[5.5.208~1-b0fc0]:main():transform-feats.cc:161) Applied transform to 4 utterances; 0 had errors.
+FMEM0_SI747 sil ae vcl d r iy m ey n iy ng ih n vcl g r iy dx iy ih n cl s sil ix n vcl b r ih ng cl t uw ax vcl b oy l sil 
+LOG (sgmm2-latgen-faster[5.5.208~1-b0fc0]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:289) Log-like per frame for utterance FMEM0_SI747 is -9.28147 over 301 frames.
+LOG (sgmm2-latgen-faster[5.5.208~1-b0fc0]:main():sgmm2-latgen-faster.cc:209) Log-like per frame for utterance FMEM0_SI747 is -9.28147 over 301 frames.
+FMEM0_SX117 sil dh ax m ae ng vcl g ow sil ix n dh ix cl p ax cl p ay y ax sil aa r ih n ax vcl b ow l sil 
+LOG (sgmm2-latgen-faster[5.5.208~1-b0fc0]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:289) Log-like per frame for utterance FMEM0_SX117 is -8.50138 over 321 frames.
+LOG (sgmm2-latgen-faster[5.5.208~1-b0fc0]:main():sgmm2-latgen-faster.cc:209) Log-like per frame for utterance FMEM0_SX117 is -8.50138 over 321 frames.
+LOG (sgmm2-latgen-faster[5.5.208~1-b0fc0]:main():sgmm2-latgen-faster.cc:252) Time taken [excluding initialization] 15.6917s: real-time factor assuming 100 frames/sec is 1.1538
+LOG (sgmm2-latgen-faster[5.5.208~1-b0fc0]:main():sgmm2-latgen-faster.cc:255) Done 4 utterances, failed for 0
+LOG (sgmm2-latgen-faster[5.5.208~1-b0fc0]:main():sgmm2-latgen-faster.cc:257) Overall log-likelihood per frame = -8.89433 over 1360 frames.
+WARNING (sgmm2-latgen-faster[5.5.208~1-b0fc0]:Close():kaldi-io.cc:515) Pipe gunzip -c exp/sgmm2_4_ali/gselect.6.gz| had nonzero return status 36096
+# Accounting: time=16 threads=1
+# Ended (code 0) at Wed Feb 27 15:29:31 +07 2019, elapsed time 16 seconds

@@ -1,0 +1,108 @@
+# steps/nnet/train.sh --feature-transform exp/dnn4_pretrain-dbn/final.feature_transform --dbn exp/dnn4_pretrain-dbn/6.dbn --hid-layers 0 --learn-rate 0.008 data-fmllr-tri3/train_tr90 data-fmllr-tri3/train_cv10 data/lang exp/tri3_ali exp/tri3_ali exp/dnn4_pretrain-dbn_dnn 
+# Started at Wed Feb 27 19:24:35 +07 2019
+#
+steps/nnet/train.sh --feature-transform exp/dnn4_pretrain-dbn/final.feature_transform --dbn exp/dnn4_pretrain-dbn/6.dbn --hid-layers 0 --learn-rate 0.008 data-fmllr-tri3/train_tr90 data-fmllr-tri3/train_cv10 data/lang exp/tri3_ali exp/tri3_ali exp/dnn4_pretrain-dbn_dnn
+
+# INFO
+steps/nnet/train.sh : Training Neural Network
+	 dir       : exp/dnn4_pretrain-dbn_dnn 
+	 Train-set : data-fmllr-tri3/train_tr90 3328, exp/tri3_ali 
+	 CV-set    : data-fmllr-tri3/train_cv10 368 exp/tri3_ali 
+
+LOG ([5.5.208~1-b0fc0]:main():cuda-gpu-available.cc:49) 
+
+### IS CUDA GPU AVAILABLE? 'asr1' ###
+WARNING ([5.5.208~1-b0fc0]:SelectGpuId():cu-device.cc:203) Not in compute-exclusive mode.  Suggestion: use 'nvidia-smi -c 3' to set compute exclusive mode
+LOG ([5.5.208~1-b0fc0]:SelectGpuIdAuto():cu-device.cc:323) Selecting from 1 GPUs
+LOG ([5.5.208~1-b0fc0]:SelectGpuIdAuto():cu-device.cc:338) cudaSetDevice(0): Tesla K80	free:11354M, used:87M, total:11441M, free/total:0.992379
+LOG ([5.5.208~1-b0fc0]:SelectGpuIdAuto():cu-device.cc:385) Trying to select device: 0 (automatically), mem_ratio: 0.992379
+LOG ([5.5.208~1-b0fc0]:SelectGpuIdAuto():cu-device.cc:404) Success selecting device 0 free mem ratio: 0.992379
+LOG ([5.5.208~1-b0fc0]:FinalizeActiveGpu():cu-device.cc:258) The active GPU is [0]: Tesla K80	free:11306M, used:135M, total:11441M, free/total:0.988184 version 3.7
+### HURRAY, WE GOT A CUDA GPU FOR COMPUTATION!!! ##
+
+### Testing CUDA setup with a small computation (setup = cuda-toolkit + gpu-driver + kaldi):
+### Test OK!
+
+# PREPARING ALIGNMENTS
+Using PDF targets from dirs 'exp/tri3_ali' 'exp/tri3_ali'
+hmm-info exp/tri3_ali/final.mdl 
+copy-transition-model --binary=false exp/tri3_ali/final.mdl exp/dnn4_pretrain-dbn_dnn/final.mdl 
+LOG (copy-transition-model[5.5.208~1-b0fc0]:main():copy-transition-model.cc:62) Copied transition model.
+
+# PREPARING FEATURES
+# re-saving features to local disk,
+copy-feats --compress=true scp:data-fmllr-tri3/train_tr90/feats.scp ark,scp:/tmp/kaldi.jkId/train.ark,exp/dnn4_pretrain-dbn_dnn/train_sorted.scp 
+LOG (copy-feats[5.5.208~1-b0fc0]:main():copy-feats.cc:143) Copied 3328 feature matrices.
+copy-feats --compress=true scp:data-fmllr-tri3/train_cv10/feats.scp ark,scp:/tmp/kaldi.jkId/cv.ark,exp/dnn4_pretrain-dbn_dnn/cv.scp 
+LOG (copy-feats[5.5.208~1-b0fc0]:main():copy-feats.cc:143) Copied 368 feature matrices.
+# importing feature settings from dir 'exp/dnn4_pretrain-dbn'
+# cmvn_opts='' delta_opts='' ivector_dim=''
+# 'apply-cmvn' is not used,
+feat-to-dim 'ark:copy-feats scp:exp/dnn4_pretrain-dbn_dnn/train.scp.10k ark:- |' - 
+copy-feats scp:exp/dnn4_pretrain-dbn_dnn/train.scp.10k ark:- 
+WARNING (feat-to-dim[5.5.208~1-b0fc0]:Close():kaldi-io.cc:515) Pipe copy-feats scp:exp/dnn4_pretrain-dbn_dnn/train.scp.10k ark:- | had nonzero return status 36096
+# feature dim : 40 (input of 'feature_transform')
+# importing 'feature_transform' from 'exp/dnn4_pretrain-dbn/final.feature_transform'
+
+### Showing the final 'feature_transform':
+nnet-info exp/dnn4_pretrain-dbn_dnn/imported_final.feature_transform 
+LOG (nnet-info[5.5.208~1-b0fc0]:main():nnet-info.cc:57) Printed info about exp/dnn4_pretrain-dbn_dnn/imported_final.feature_transform
+num-components 3
+input-dim 40
+output-dim 440
+number-of-parameters 0.00088 millions
+component 1 : <Splice>, input-dim 40, output-dim 440, 
+  frame_offsets [ -5 -4 -3 -2 -1 0 1 2 3 4 5 ]
+component 2 : <AddShift>, input-dim 440, output-dim 440, 
+  shift_data ( min -0.172178, max 0.0701764, mean -0.00514678, stddev 0.0391212, skewness -2.25598, kurtosis 6.26522 ) , lr-coef 0
+component 3 : <Rescale>, input-dim 440, output-dim 440, 
+  scale_data ( min 0.324352, max 0.953136, mean 0.762776, stddev 0.156159, skewness -0.689811, kurtosis -0.322106 ) , lr-coef 0
+###
+
+# NN-INITIALIZATION
+# getting input/output dims :
+feat-to-dim 'ark:copy-feats scp:exp/dnn4_pretrain-dbn_dnn/train.scp.10k ark:- | nnet-forward "nnet-concat exp/dnn4_pretrain-dbn_dnn/final.feature_transform '\''exp/dnn4_pretrain-dbn/6.dbn'\'' -|" ark:- ark:- |' - 
+copy-feats scp:exp/dnn4_pretrain-dbn_dnn/train.scp.10k ark:- 
+nnet-forward "nnet-concat exp/dnn4_pretrain-dbn_dnn/final.feature_transform 'exp/dnn4_pretrain-dbn/6.dbn' -|" ark:- ark:- 
+LOG (nnet-forward[5.5.208~1-b0fc0]:SelectGpuId():cu-device.cc:128) Manually selected to compute on CPU.
+nnet-concat exp/dnn4_pretrain-dbn_dnn/final.feature_transform exp/dnn4_pretrain-dbn/6.dbn - 
+LOG (nnet-concat[5.5.208~1-b0fc0]:main():nnet-concat.cc:53) Reading exp/dnn4_pretrain-dbn_dnn/final.feature_transform
+LOG (nnet-concat[5.5.208~1-b0fc0]:main():nnet-concat.cc:65) Concatenating exp/dnn4_pretrain-dbn/6.dbn
+LOG (nnet-concat[5.5.208~1-b0fc0]:main():nnet-concat.cc:82) Written model to -
+WARNING (feat-to-dim[5.5.208~1-b0fc0]:Close():kaldi-io.cc:515) Pipe copy-feats scp:exp/dnn4_pretrain-dbn_dnn/train.scp.10k ark:- | nnet-forward "nnet-concat exp/dnn4_pretrain-dbn_dnn/final.feature_transform 'exp/dnn4_pretrain-dbn/6.dbn' -|" ark:- ark:- | had nonzero return status 36096
+# genrating network prototype exp/dnn4_pretrain-dbn_dnn/nnet.proto
+# initializing the NN 'exp/dnn4_pretrain-dbn_dnn/nnet.proto' -> 'exp/dnn4_pretrain-dbn_dnn/nnet.init'
+nnet-initialize --seed=777 exp/dnn4_pretrain-dbn_dnn/nnet.proto exp/dnn4_pretrain-dbn_dnn/nnet.init 
+VLOG[1] (nnet-initialize[5.5.208~1-b0fc0]:Init():nnet-nnet.cc:314) <AffineTransform> <InputDim> 1024 <OutputDim> 1944 <BiasMean> 0.000000 <BiasRange> 0.000000 <ParamStddev> 0.090855
+VLOG[1] (nnet-initialize[5.5.208~1-b0fc0]:Init():nnet-nnet.cc:314) <Softmax> <InputDim> 1944 <OutputDim> 1944
+VLOG[1] (nnet-initialize[5.5.208~1-b0fc0]:Init():nnet-nnet.cc:314) </NnetProto>
+LOG (nnet-initialize[5.5.208~1-b0fc0]:main():nnet-initialize.cc:63) Written initialized model to exp/dnn4_pretrain-dbn_dnn/nnet.init
+nnet-concat exp/dnn4_pretrain-dbn/6.dbn exp/dnn4_pretrain-dbn_dnn/nnet.init exp/dnn4_pretrain-dbn_dnn/nnet_dbn_dnn.init 
+LOG (nnet-concat[5.5.208~1-b0fc0]:main():nnet-concat.cc:53) Reading exp/dnn4_pretrain-dbn/6.dbn
+LOG (nnet-concat[5.5.208~1-b0fc0]:main():nnet-concat.cc:65) Concatenating exp/dnn4_pretrain-dbn_dnn/nnet.init
+LOG (nnet-concat[5.5.208~1-b0fc0]:main():nnet-concat.cc:82) Written model to exp/dnn4_pretrain-dbn_dnn/nnet_dbn_dnn.init
+
+# RUNNING THE NN-TRAINING SCHEDULER
+steps/nnet/train_scheduler.sh --feature-transform exp/dnn4_pretrain-dbn_dnn/final.feature_transform --learn-rate 0.008 exp/dnn4_pretrain-dbn_dnn/nnet_dbn_dnn.init ark:copy-feats scp:exp/dnn4_pretrain-dbn_dnn/train.scp ark:- | ark:copy-feats scp:exp/dnn4_pretrain-dbn_dnn/cv.scp ark:- | ark:ali-to-pdf exp/tri3_ali/final.mdl "ark:gunzip -c exp/tri3_ali/ali.*.gz |" ark:- | ali-to-post ark:- ark:- | ark:ali-to-pdf exp/tri3_ali/final.mdl "ark:gunzip -c exp/tri3_ali/ali.*.gz |" ark:- | ali-to-post ark:- ark:- | exp/dnn4_pretrain-dbn_dnn
+CROSSVAL PRERUN AVG.LOSS 7.7613 (Xent),
+ITERATION 01: TRAIN AVG.LOSS 2.1118, (lrate0.008), CROSSVAL AVG.LOSS 1.9034, nnet accepted (nnet_dbn_dnn_iter01_learnrate0.008_tr2.1118_cv1.9034)
+ITERATION 02: TRAIN AVG.LOSS 1.4016, (lrate0.008), CROSSVAL AVG.LOSS 1.7826, nnet accepted (nnet_dbn_dnn_iter02_learnrate0.008_tr1.4016_cv1.7826)
+ITERATION 03: TRAIN AVG.LOSS 1.1953, (lrate0.008), CROSSVAL AVG.LOSS 1.7558, nnet accepted (nnet_dbn_dnn_iter03_learnrate0.008_tr1.1953_cv1.7558)
+ITERATION 04: TRAIN AVG.LOSS 1.0476, (lrate0.008), CROSSVAL AVG.LOSS 1.7621, nnet rejected (nnet_dbn_dnn_iter04_learnrate0.008_tr1.0476_cv1.7621_rejected)
+ITERATION 05: TRAIN AVG.LOSS 1.0040, (lrate0.004), CROSSVAL AVG.LOSS 1.6427, nnet accepted (nnet_dbn_dnn_iter05_learnrate0.004_tr1.0040_cv1.6427)
+ITERATION 06: TRAIN AVG.LOSS 0.9139, (lrate0.002), CROSSVAL AVG.LOSS 1.5713, nnet accepted (nnet_dbn_dnn_iter06_learnrate0.002_tr0.9139_cv1.5713)
+ITERATION 07: TRAIN AVG.LOSS 0.8739, (lrate0.001), CROSSVAL AVG.LOSS 1.5248, nnet accepted (nnet_dbn_dnn_iter07_learnrate0.001_tr0.8739_cv1.5248)
+ITERATION 08: TRAIN AVG.LOSS 0.8559, (lrate0.0005), CROSSVAL AVG.LOSS 1.4967, nnet accepted (nnet_dbn_dnn_iter08_learnrate0.0005_tr0.8559_cv1.4967)
+ITERATION 09: TRAIN AVG.LOSS 0.8470, (lrate0.00025), CROSSVAL AVG.LOSS 1.4813, nnet accepted (nnet_dbn_dnn_iter09_learnrate0.00025_tr0.8470_cv1.4813)
+ITERATION 10: TRAIN AVG.LOSS 0.8419, (lrate0.000125), CROSSVAL AVG.LOSS 1.4734, nnet accepted (nnet_dbn_dnn_iter10_learnrate0.000125_tr0.8419_cv1.4734)
+ITERATION 11: TRAIN AVG.LOSS 0.8385, (lrate6.25e-05), CROSSVAL AVG.LOSS 1.4695, nnet accepted (nnet_dbn_dnn_iter11_learnrate6.25e-05_tr0.8385_cv1.4695)
+ITERATION 12: TRAIN AVG.LOSS 0.8363, (lrate3.125e-05), CROSSVAL AVG.LOSS 1.4678, nnet accepted (nnet_dbn_dnn_iter12_learnrate3.125e-05_tr0.8363_cv1.4678)
+ITERATION 13: TRAIN AVG.LOSS 0.8349, (lrate1.5625e-05), CROSSVAL AVG.LOSS 1.4669, nnet accepted (nnet_dbn_dnn_iter13_learnrate1.5625e-05_tr0.8349_cv1.4669)
+finished, too small rel. improvement 0.000558674
+steps/nnet/train_scheduler.sh: Succeeded training the Neural Network : 'exp/dnn4_pretrain-dbn_dnn/final.nnet'
+steps/nnet/train.sh: Successfuly finished. 'exp/dnn4_pretrain-dbn_dnn'
+# Removing features tmpdir /tmp/kaldi.jkId @ asr1
+cv.ark
+train.ark
+# Accounting: time=695 threads=1
+# Ended (code 0) at Wed Feb 27 19:36:10 +07 2019, elapsed time 695 seconds
